@@ -1,6 +1,6 @@
 //
 //  MFTestDefaults.m
-//  Obsidian
+//  MFDynamic
 //
 //  Created by Michaël Fortin on 2013-08-22.
 //  Copyright (c) 2013 Michaël Fortin. All rights reserved.

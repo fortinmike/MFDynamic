@@ -1,6 +1,6 @@
 //
 //  MFHumanReadableConverter.h
-//  Obsidian
+//  MFDynamic
 //
 //  Created by Michaël Fortin on 2014-04-11.
 //  Copyright (c) 2014 irradiated.net. All rights reserved.

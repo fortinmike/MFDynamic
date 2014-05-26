@@ -1,6 +1,6 @@
 //
 //  MFTestUserDefaults.h
-//  Obsidian
+//  MFDynamic
 //
 //  Created by Michaël Fortin on 2013-08-24.
 //  Copyright (c) 2013 irradiated.net. All rights reserved.
