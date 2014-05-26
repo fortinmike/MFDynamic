@@ -10,6 +10,8 @@
 
 @implementation MFTestDefaults
 
+#pragma mark Value Types
+
 @dynamic boolDefault;
 @dynamic charDefault;
 @dynamic intDefault;
@@ -24,6 +26,8 @@
 @dynamic floatDefault;
 @dynamic doubleDefault;
 
+#pragma mark NSUserDefaults-Supported Types
+
 @dynamic dataDefault;
 @dynamic stringDefault;
 @dynamic numberDefault;
@@ -31,11 +35,16 @@
 @dynamic arrayDefault;
 @dynamic dictionaryDefault;
 
+#pragma mark NSCoding-Conforming Types
+
+@dynamic urlDefault;
+
 #if TARGET_OS_IPHONE
-@dynamic imageDefault;
-@dynamic colorDefault;
+@dynamic uiImageDefault;
+@dynamic uiColorDefault;
 #endif
-@dynamic URLDefault;
+
+#pragma mark id
 
 @dynamic objectDefault;
 

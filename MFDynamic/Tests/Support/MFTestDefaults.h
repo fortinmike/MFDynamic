@@ -8,9 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "MFDynamicDefaults.h"
+#import "MFNSCodingImplementer.h"
 
 #if TARGET_OS_IPHONE
 #import <UIKit/UIKit.h>
+#else
+#import <Cocoa/Cocoa.h>
 #endif
 
 @interface MFTestDefaults : MFDynamicDefaults
@@ -31,7 +34,7 @@
 @property float floatDefault;
 @property double doubleDefault;
 
-#pragma mark NSUserDefaults-supported Types
+#pragma mark NSUserDefaults-Supported Types
 
 @property NSData *dataDefault;
 @property NSString *stringDefault;
@@ -40,13 +43,15 @@
 @property NSArray *arrayDefault;
 @property NSDictionary *dictionaryDefault;
 
-#pragma mark NSCoding-conforming Types
+#pragma mark NSCoding-Conforming Types
+
+@property NSURL *urlDefault;
+@property MFNSCodingImplementer *nsCodingImplementer;
 
 #if TARGET_OS_IPHONE
-@property UIImage *imageDefault;
-@property UIColor *colorDefault;
+@property UIImage *uiImageDefault;
+@property UIColor *uiColorDefault;
 #endif
-@property NSURL *URLDefault;
 
 #pragma mark id
 

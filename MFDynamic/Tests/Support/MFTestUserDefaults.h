@@ -9,6 +9,8 @@
 //  https://github.com/zoul/TestingUserDefaults/blob/master/CCTestingUserDefaults.m
 //
 
+#import <Foundation/Foundation.h>
+
 @interface MFTestUserDefaults : NSObject
 
 #pragma mark Writing

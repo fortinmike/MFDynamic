@@ -39,12 +39,14 @@
 		4CEE9EE91933E2C100092F6A /* MFDynamicDefaultsSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE9EE21933E2C100092F6A /* MFDynamicDefaultsSpec.m */; };
 		4CEE9EEA1933E2C100092F6A /* MFDynamicStorageSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE9EE31933E2C100092F6A /* MFDynamicStorageSpec.m */; };
 		4CEE9EEB1933E2C100092F6A /* MFDynamicStorageSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE9EE31933E2C100092F6A /* MFDynamicStorageSpec.m */; };
-		4CEE9EEC1933E2C100092F6A /* MFTestDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE9EE51933E2C100092F6A /* MFTestDefaults.m */; };
-		4CEE9EED1933E2C100092F6A /* MFTestDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE9EE51933E2C100092F6A /* MFTestDefaults.m */; };
-		4CEE9EEE1933E2C100092F6A /* MFTestStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE9EE71933E2C100092F6A /* MFTestStorage.m */; };
-		4CEE9EEF1933E2C100092F6A /* MFTestStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE9EE71933E2C100092F6A /* MFTestStorage.m */; };
-		4CEE9EF21933E6F200092F6A /* MFTestUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE9EF11933E6F200092F6A /* MFTestUserDefaults.m */; };
-		4CEE9EF31933E6F200092F6A /* MFTestUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE9EF11933E6F200092F6A /* MFTestUserDefaults.m */; };
+		4CEE9EFE1933F2E000092F6A /* MFNSCodingImplementer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE9EF71933F2E000092F6A /* MFNSCodingImplementer.m */; };
+		4CEE9EFF1933F2E000092F6A /* MFNSCodingImplementer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE9EF71933F2E000092F6A /* MFNSCodingImplementer.m */; };
+		4CEE9F001933F2E000092F6A /* MFTestDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE9EF91933F2E000092F6A /* MFTestDefaults.m */; };
+		4CEE9F011933F2E000092F6A /* MFTestDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE9EF91933F2E000092F6A /* MFTestDefaults.m */; };
+		4CEE9F021933F2E000092F6A /* MFTestStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE9EFB1933F2E000092F6A /* MFTestStorage.m */; };
+		4CEE9F031933F2E000092F6A /* MFTestStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE9EFB1933F2E000092F6A /* MFTestStorage.m */; };
+		4CEE9F041933F2E000092F6A /* MFTestUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE9EFD1933F2E000092F6A /* MFTestUserDefaults.m */; };
+		4CEE9F051933F2E000092F6A /* MFTestUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE9EFD1933F2E000092F6A /* MFTestUserDefaults.m */; };
 		77A5CEDC863C43E087A7947A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F08C97F96A34A0F8AE9D657 /* libPods.a */; };
 		AE4B39FA553B48B2B35A0F47 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F08C97F96A34A0F8AE9D657 /* libPods.a */; };
 		B9DC419F83E042C98E4F6929 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F08C97F96A34A0F8AE9D657 /* libPods.a */; };
@@ -84,12 +86,12 @@
 		4CC18D4419145C9B00CEECEC /* MFDynamic-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MFDynamic-Prefix.pch"; path = "Source/MFDynamic-Prefix.pch"; sourceTree = "<group>"; };
 		4CC18D4519145C9B00CEECEC /* MFDynamic.Mac-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "MFDynamic.Mac-Info.plist"; path = "Source/MFDynamic.Mac-Info.plist"; sourceTree = "<group>"; };
 		4CC18D4A19145CA300CEECEC /* MFDynamicTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "MFDynamicTests-Info.plist"; path = "Tests/MFDynamicTests-Info.plist"; sourceTree = "<group>"; };
-		4CC252DC191C1E7300E49DF7 /* MFDynamic.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = MFDynamic.podspec; path = ../MFDynamic.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		4CC252DC191C1E7300E49DF7 /* MFDynamic.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; lineEnding = 0; name = MFDynamic.podspec; path = ../MFDynamic.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		4CC252DD191C1E7300E49DF7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		4CDD635019232E7800936B49 /* MFDynamic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFDynamic.h; sourceTree = "<group>"; };
-		4CEE9ECA1933DA5600092F6A /* MFDynamicBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFDynamicBase.h; sourceTree = "<group>"; };
-		4CEE9ECB1933DA5600092F6A /* MFDynamicBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFDynamicBase.m; sourceTree = "<group>"; };
-		4CEE9ECC1933DA5600092F6A /* MFDynamicDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFDynamicDefaults.h; sourceTree = "<group>"; };
+		4CDD635019232E7800936B49 /* MFDynamic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MFDynamic.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		4CEE9ECA1933DA5600092F6A /* MFDynamicBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MFDynamicBase.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		4CEE9ECB1933DA5600092F6A /* MFDynamicBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MFDynamicBase.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		4CEE9ECC1933DA5600092F6A /* MFDynamicDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MFDynamicDefaults.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		4CEE9ECD1933DA5600092F6A /* MFDynamicDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFDynamicDefaults.m; sourceTree = "<group>"; };
 		4CEE9ECE1933DA5600092F6A /* MFDynamicStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFDynamicStorage.h; sourceTree = "<group>"; };
 		4CEE9ECF1933DA5600092F6A /* MFDynamicStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFDynamicStorage.m; sourceTree = "<group>"; };
@@ -97,12 +99,14 @@
 		4CEE9ED11933DA5600092F6A /* MFHumanReadableConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFHumanReadableConverter.m; sourceTree = "<group>"; };
 		4CEE9EE21933E2C100092F6A /* MFDynamicDefaultsSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFDynamicDefaultsSpec.m; sourceTree = "<group>"; };
 		4CEE9EE31933E2C100092F6A /* MFDynamicStorageSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFDynamicStorageSpec.m; sourceTree = "<group>"; };
-		4CEE9EE41933E2C100092F6A /* MFTestDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFTestDefaults.h; sourceTree = "<group>"; };
-		4CEE9EE51933E2C100092F6A /* MFTestDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFTestDefaults.m; sourceTree = "<group>"; };
-		4CEE9EE61933E2C100092F6A /* MFTestStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFTestStorage.h; sourceTree = "<group>"; };
-		4CEE9EE71933E2C100092F6A /* MFTestStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFTestStorage.m; sourceTree = "<group>"; };
-		4CEE9EF01933E6F200092F6A /* MFTestUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFTestUserDefaults.h; sourceTree = "<group>"; };
-		4CEE9EF11933E6F200092F6A /* MFTestUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFTestUserDefaults.m; sourceTree = "<group>"; };
+		4CEE9EF61933F2E000092F6A /* MFNSCodingImplementer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFNSCodingImplementer.h; sourceTree = "<group>"; };
+		4CEE9EF71933F2E000092F6A /* MFNSCodingImplementer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFNSCodingImplementer.m; sourceTree = "<group>"; };
+		4CEE9EF81933F2E000092F6A /* MFTestDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFTestDefaults.h; sourceTree = "<group>"; };
+		4CEE9EF91933F2E000092F6A /* MFTestDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFTestDefaults.m; sourceTree = "<group>"; };
+		4CEE9EFA1933F2E000092F6A /* MFTestStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFTestStorage.h; sourceTree = "<group>"; };
+		4CEE9EFB1933F2E000092F6A /* MFTestStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFTestStorage.m; sourceTree = "<group>"; };
+		4CEE9EFC1933F2E000092F6A /* MFTestUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFTestUserDefaults.h; sourceTree = "<group>"; };
+		4CEE9EFD1933F2E000092F6A /* MFTestUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFTestUserDefaults.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,7 +218,7 @@
 			children = (
 				4CEE9EE21933E2C100092F6A /* MFDynamicDefaultsSpec.m */,
 				4CEE9EE31933E2C100092F6A /* MFDynamicStorageSpec.m */,
-				4CEE9EF41933F18D00092F6A /* Support */,
+				4CEE9EF51933F2E000092F6A /* Support */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -232,17 +236,19 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		4CEE9EF41933F18D00092F6A /* Support */ = {
+		4CEE9EF51933F2E000092F6A /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				4CEE9EE41933E2C100092F6A /* MFTestDefaults.h */,
-				4CEE9EE51933E2C100092F6A /* MFTestDefaults.m */,
-				4CEE9EE61933E2C100092F6A /* MFTestStorage.h */,
-				4CEE9EE71933E2C100092F6A /* MFTestStorage.m */,
-				4CEE9EF01933E6F200092F6A /* MFTestUserDefaults.h */,
-				4CEE9EF11933E6F200092F6A /* MFTestUserDefaults.m */,
+				4CEE9EF61933F2E000092F6A /* MFNSCodingImplementer.h */,
+				4CEE9EF71933F2E000092F6A /* MFNSCodingImplementer.m */,
+				4CEE9EF81933F2E000092F6A /* MFTestDefaults.h */,
+				4CEE9EF91933F2E000092F6A /* MFTestDefaults.m */,
+				4CEE9EFA1933F2E000092F6A /* MFTestStorage.h */,
+				4CEE9EFB1933F2E000092F6A /* MFTestStorage.m */,
+				4CEE9EFC1933F2E000092F6A /* MFTestUserDefaults.h */,
+				4CEE9EFD1933F2E000092F6A /* MFTestUserDefaults.m */,
 			);
-			name = Support;
+			path = Support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -556,10 +562,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CEE9EFF1933F2E000092F6A /* MFNSCodingImplementer.m in Sources */,
+				4CEE9F051933F2E000092F6A /* MFTestUserDefaults.m in Sources */,
 				4CEE9EE91933E2C100092F6A /* MFDynamicDefaultsSpec.m in Sources */,
-				4CEE9EF31933E6F200092F6A /* MFTestUserDefaults.m in Sources */,
-				4CEE9EED1933E2C100092F6A /* MFTestDefaults.m in Sources */,
-				4CEE9EEF1933E2C100092F6A /* MFTestStorage.m in Sources */,
+				4CEE9F011933F2E000092F6A /* MFTestDefaults.m in Sources */,
+				4CEE9F031933F2E000092F6A /* MFTestStorage.m in Sources */,
 				4CEE9EEB1933E2C100092F6A /* MFDynamicStorageSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -579,10 +586,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CEE9EFE1933F2E000092F6A /* MFNSCodingImplementer.m in Sources */,
+				4CEE9F041933F2E000092F6A /* MFTestUserDefaults.m in Sources */,
 				4CEE9EE81933E2C100092F6A /* MFDynamicDefaultsSpec.m in Sources */,
-				4CEE9EF21933E6F200092F6A /* MFTestUserDefaults.m in Sources */,
-				4CEE9EEC1933E2C100092F6A /* MFTestDefaults.m in Sources */,
-				4CEE9EEE1933E2C100092F6A /* MFTestStorage.m in Sources */,
+				4CEE9F001933F2E000092F6A /* MFTestDefaults.m in Sources */,
+				4CEE9F021933F2E000092F6A /* MFTestStorage.m in Sources */,
 				4CEE9EEA1933E2C100092F6A /* MFDynamicStorageSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

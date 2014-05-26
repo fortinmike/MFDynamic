@@ -44,90 +44,6 @@ describe(@"MFDynamicDefaults", ^
 	
 	context(@"when using accessors", ^
 	{
-		it(@"should store and retrieve BOOL (signed char) without loss", ^
-		{
-			[testDefaults setBoolDefault:YES];
-			[[theValue([testDefaults boolDefault]) should] beYes];
-		});
-		   
-		it(@"should store and retrieve int without loss", ^
-		{
-			[testDefaults setIntDefault:INT_MIN];
-			[[theValue([testDefaults intDefault]) should] equal:theValue(INT_MIN)];
-			[testDefaults setIntDefault:INT_MAX];
-			[[theValue([testDefaults intDefault]) should] equal:theValue(INT_MAX)];
-		});
-		
-		it(@"should store and retrieve short without loss", ^
-		{
-			[testDefaults setShortDefault:SHRT_MIN];
-			[[theValue([testDefaults shortDefault]) should] equal:theValue(SHRT_MIN)];
-			[testDefaults setShortDefault:SHRT_MAX];
-			[[theValue([testDefaults shortDefault]) should] equal:theValue(SHRT_MAX)];
-		});
-		
-		it(@"should store and retrieve long without loss", ^
-		{
-			[testDefaults setLongDefault:LONG_MIN];
-			[[theValue([testDefaults longDefault]) should] equal:theValue(LONG_MIN)];
-			[testDefaults setLongDefault:LONG_MAX];
-			[[theValue([testDefaults longDefault]) should] equal:theValue(LONG_MAX)];
-		});
-		
-		it(@"should store and retrieve long long without loss", ^
-		{
-			[testDefaults setLongLongDefault:LLONG_MIN];
-			[[theValue([testDefaults longLongDefault]) should] equal:theValue(LLONG_MIN)];
-			[testDefaults setLongLongDefault:LLONG_MAX];
-			[[theValue([testDefaults longLongDefault]) should] equal:theValue(LLONG_MAX)];
-		});
-		
-		it(@"should store and retrieve unsigned char without loss", ^
-		{
-			[testDefaults setUnsignedCharDefault:UCHAR_MAX];
-			[[theValue([testDefaults unsignedCharDefault]) should] equal:theValue(UCHAR_MAX)];
-		});
-		
-		it(@"should store and retrieve unsigned int without loss", ^
-		{
-			[testDefaults setUnsignedIntDefault:UINT_MAX];
-			[[theValue([testDefaults unsignedIntDefault]) should] equal:theValue(UINT_MAX)];
-		});
-		
-		it(@"should store and retrieve unsigned short without loss", ^
-		{
-			[testDefaults setUnsignedShortDefault:USHRT_MAX];
-			[[theValue([testDefaults unsignedShortDefault]) should] equal:theValue(USHRT_MAX)];
-		});
-		
-		it(@"should store and retrieve unsigned long without loss", ^
-		{
-			[testDefaults setUnsignedLongDefault:ULONG_MAX];
-			[[theValue([testDefaults unsignedLongDefault]) should] equal:theValue(ULONG_MAX)];
-		});
-		
-		it(@"should store and retrieve unsigned long long without loss", ^
-		{
-			[testDefaults setUnsignedLongLongDefault:ULLONG_MAX];
-			[[theValue([testDefaults unsignedLongLongDefault]) should] equal:theValue(ULLONG_MAX)];
-		});
-		
-		it(@"should store and retrieve float without loss", ^
-		{
-			[testDefaults setFloatDefault:FLT_MIN];
-			[[theValue([testDefaults floatDefault]) should] equal:FLT_MIN withDelta:FLT_EPSILON];
-			[testDefaults setFloatDefault:FLT_MAX];
-			[[theValue([testDefaults floatDefault]) should] equal:FLT_MAX withDelta:FLT_EPSILON];
-		});
-		
-		it(@"should store and retrieve double without loss", ^
-		{
-			[testDefaults setDoubleDefault:DBL_MIN];
-			[[theValue([testDefaults doubleDefault]) should] equal:DBL_MIN withDelta:FLT_EPSILON];
-			[testDefaults setDoubleDefault:DBL_MAX];
-			[[theValue([testDefaults doubleDefault]) should] equal:DBL_MAX withDelta:FLT_EPSILON];
-		});
-		
 		it(@"should have its dynamically-generated setter called", ^
 		{
 			[[[testDefaults->_userDefaults should] receive] setObject:any() forKey:any()];
@@ -137,18 +53,6 @@ describe(@"MFDynamicDefaults", ^
 		it(@"should have its dynamically-generated getter called", ^
 		{
 			[[[testDefaults->_userDefaults should] receive] objectForKey:any()];
-			[testDefaults boolDefault];
-		});
-		
-		it(@"should set the value with a correctly capitalized key", ^
-		{
-			[[[testDefaults->_userDefaults should] receive] setObject:any() forKey:@"SomeBoolDefault"];
-			[testDefaults setBoolDefault:YES];
-		});
-		
-		it(@"should get the value with a correctly capitalized key", ^
-		{
-			[[[testDefaults->_userDefaults should] receive] objectForKey:@"SomeBoolDefault"];
 			[testDefaults boolDefault];
 		});
 		
@@ -196,8 +100,8 @@ describe(@"MFDynamicDefaults", ^
 		it(@"should store and retrieve instances that conform to NSCoding", ^
 		{
 			NSURL *url = [NSURL URLWithString:@"http://www.google.com"];
-			[testDefaults setURLDefault:url];
-			[[[testDefaults URLDefault] should] equal:url];
+			[testDefaults setUrlDefault:url];
+			[[[testDefaults urlDefault] should] equal:url];
 			
 #if TARGET_OS_IPHONE
 			UIImage *image = testImage();
