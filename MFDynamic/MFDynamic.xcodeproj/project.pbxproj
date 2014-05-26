@@ -214,12 +214,7 @@
 			children = (
 				4CEE9EE21933E2C100092F6A /* MFDynamicDefaultsSpec.m */,
 				4CEE9EE31933E2C100092F6A /* MFDynamicStorageSpec.m */,
-				4CEE9EE41933E2C100092F6A /* MFTestDefaults.h */,
-				4CEE9EE51933E2C100092F6A /* MFTestDefaults.m */,
-				4CEE9EE61933E2C100092F6A /* MFTestStorage.h */,
-				4CEE9EE71933E2C100092F6A /* MFTestStorage.m */,
-				4CEE9EF01933E6F200092F6A /* MFTestUserDefaults.h */,
-				4CEE9EF11933E6F200092F6A /* MFTestUserDefaults.m */,
+				4CEE9EF41933F18D00092F6A /* Support */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -235,6 +230,19 @@
 				4CC252DD191C1E7300E49DF7 /* README.md */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4CEE9EF41933F18D00092F6A /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				4CEE9EE41933E2C100092F6A /* MFTestDefaults.h */,
+				4CEE9EE51933E2C100092F6A /* MFTestDefaults.m */,
+				4CEE9EE61933E2C100092F6A /* MFTestStorage.h */,
+				4CEE9EE71933E2C100092F6A /* MFTestStorage.m */,
+				4CEE9EF01933E6F200092F6A /* MFTestUserDefaults.h */,
+				4CEE9EF11933E6F200092F6A /* MFTestUserDefaults.m */,
+			);
+			name = Support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
