@@ -19,6 +19,22 @@
 		4CDD635119232E7800936B49 /* MFDynamic.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CDD635019232E7800936B49 /* MFDynamic.h */; };
 		4CDD635219232E7800936B49 /* MFDynamic.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CDD635019232E7800936B49 /* MFDynamic.h */; };
 		4CECFCF319145E540022AA2A /* MFDynamic-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 4CC18D4419145C9B00CEECEC /* MFDynamic-Prefix.pch */; };
+		4CEE9ED21933DA5600092F6A /* MFDynamicBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CEE9ECA1933DA5600092F6A /* MFDynamicBase.h */; };
+		4CEE9ED31933DA5600092F6A /* MFDynamicBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CEE9ECA1933DA5600092F6A /* MFDynamicBase.h */; };
+		4CEE9ED41933DA5600092F6A /* MFDynamicBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE9ECB1933DA5600092F6A /* MFDynamicBase.m */; };
+		4CEE9ED51933DA5600092F6A /* MFDynamicBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE9ECB1933DA5600092F6A /* MFDynamicBase.m */; };
+		4CEE9ED61933DA5600092F6A /* MFDynamicDefaults.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CEE9ECC1933DA5600092F6A /* MFDynamicDefaults.h */; };
+		4CEE9ED71933DA5600092F6A /* MFDynamicDefaults.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CEE9ECC1933DA5600092F6A /* MFDynamicDefaults.h */; };
+		4CEE9ED81933DA5600092F6A /* MFDynamicDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE9ECD1933DA5600092F6A /* MFDynamicDefaults.m */; };
+		4CEE9ED91933DA5600092F6A /* MFDynamicDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE9ECD1933DA5600092F6A /* MFDynamicDefaults.m */; };
+		4CEE9EDA1933DA5600092F6A /* MFDynamicStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CEE9ECE1933DA5600092F6A /* MFDynamicStorage.h */; };
+		4CEE9EDB1933DA5600092F6A /* MFDynamicStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CEE9ECE1933DA5600092F6A /* MFDynamicStorage.h */; };
+		4CEE9EDC1933DA5600092F6A /* MFDynamicStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE9ECF1933DA5600092F6A /* MFDynamicStorage.m */; };
+		4CEE9EDD1933DA5600092F6A /* MFDynamicStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE9ECF1933DA5600092F6A /* MFDynamicStorage.m */; };
+		4CEE9EDE1933DA5600092F6A /* MFHumanReadableConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CEE9ED01933DA5600092F6A /* MFHumanReadableConverter.h */; };
+		4CEE9EDF1933DA5600092F6A /* MFHumanReadableConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CEE9ED01933DA5600092F6A /* MFHumanReadableConverter.h */; };
+		4CEE9EE01933DA5600092F6A /* MFHumanReadableConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE9ED11933DA5600092F6A /* MFHumanReadableConverter.m */; };
+		4CEE9EE11933DA5600092F6A /* MFHumanReadableConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE9ED11933DA5600092F6A /* MFHumanReadableConverter.m */; };
 		77A5CEDC863C43E087A7947A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F08C97F96A34A0F8AE9D657 /* libPods.a */; };
 		AE4B39FA553B48B2B35A0F47 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F08C97F96A34A0F8AE9D657 /* libPods.a */; };
 		B9DC419F83E042C98E4F6929 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F08C97F96A34A0F8AE9D657 /* libPods.a */; };
@@ -61,6 +77,14 @@
 		4CC252DC191C1E7300E49DF7 /* MFDynamic.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = MFDynamic.podspec; path = ../MFDynamic.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		4CC252DD191C1E7300E49DF7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		4CDD635019232E7800936B49 /* MFDynamic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFDynamic.h; sourceTree = "<group>"; };
+		4CEE9ECA1933DA5600092F6A /* MFDynamicBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFDynamicBase.h; sourceTree = "<group>"; };
+		4CEE9ECB1933DA5600092F6A /* MFDynamicBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFDynamicBase.m; sourceTree = "<group>"; };
+		4CEE9ECC1933DA5600092F6A /* MFDynamicDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFDynamicDefaults.h; sourceTree = "<group>"; };
+		4CEE9ECD1933DA5600092F6A /* MFDynamicDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFDynamicDefaults.m; sourceTree = "<group>"; };
+		4CEE9ECE1933DA5600092F6A /* MFDynamicStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFDynamicStorage.h; sourceTree = "<group>"; };
+		4CEE9ECF1933DA5600092F6A /* MFDynamicStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFDynamicStorage.m; sourceTree = "<group>"; };
+		4CEE9ED01933DA5600092F6A /* MFHumanReadableConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFHumanReadableConverter.h; sourceTree = "<group>"; };
+		4CEE9ED11933DA5600092F6A /* MFHumanReadableConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFHumanReadableConverter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +179,14 @@
 			isa = PBXGroup;
 			children = (
 				4CDD635019232E7800936B49 /* MFDynamic.h */,
+				4CEE9ECA1933DA5600092F6A /* MFDynamicBase.h */,
+				4CEE9ECB1933DA5600092F6A /* MFDynamicBase.m */,
+				4CEE9ECC1933DA5600092F6A /* MFDynamicDefaults.h */,
+				4CEE9ECD1933DA5600092F6A /* MFDynamicDefaults.m */,
+				4CEE9ECE1933DA5600092F6A /* MFDynamicStorage.h */,
+				4CEE9ECF1933DA5600092F6A /* MFDynamicStorage.m */,
+				4CEE9ED01933DA5600092F6A /* MFHumanReadableConverter.h */,
+				4CEE9ED11933DA5600092F6A /* MFHumanReadableConverter.m */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -186,8 +218,12 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CEE9ED31933DA5600092F6A /* MFDynamicBase.h in Headers */,
+				4CEE9ED71933DA5600092F6A /* MFDynamicDefaults.h in Headers */,
+				4CEE9EDF1933DA5600092F6A /* MFHumanReadableConverter.h in Headers */,
 				4CECFCF319145E540022AA2A /* MFDynamic-Prefix.pch in Headers */,
 				4CDD635219232E7800936B49 /* MFDynamic.h in Headers */,
+				4CEE9EDB1933DA5600092F6A /* MFDynamicStorage.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,8 +231,12 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CEE9ED21933DA5600092F6A /* MFDynamicBase.h in Headers */,
+				4CEE9ED61933DA5600092F6A /* MFDynamicDefaults.h in Headers */,
+				4CEE9EDE1933DA5600092F6A /* MFHumanReadableConverter.h in Headers */,
 				4CC18D4719145C9B00CEECEC /* MFDynamic-Prefix.pch in Headers */,
 				4CDD635119232E7800936B49 /* MFDynamic.h in Headers */,
+				4CEE9EDA1933DA5600092F6A /* MFDynamicStorage.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,6 +511,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CEE9ED91933DA5600092F6A /* MFDynamicDefaults.m in Sources */,
+				4CEE9EE11933DA5600092F6A /* MFHumanReadableConverter.m in Sources */,
+				4CEE9ED51933DA5600092F6A /* MFDynamicBase.m in Sources */,
+				4CEE9EDD1933DA5600092F6A /* MFDynamicStorage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,6 +529,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CEE9ED81933DA5600092F6A /* MFDynamicDefaults.m in Sources */,
+				4CEE9EE01933DA5600092F6A /* MFHumanReadableConverter.m in Sources */,
+				4CEE9ED41933DA5600092F6A /* MFDynamicBase.m in Sources */,
+				4CEE9EDC1933DA5600092F6A /* MFDynamicStorage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

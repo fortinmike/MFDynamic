@@ -9,4 +9,8 @@
 #ifndef MFDynamic_MFDynamic_h
 #define MFDynamic_MFDynamic_h
 
+#import "MFDynamicBase.h"
+#import "MFDynamicDefaults.h"
+#import "MFDynamicStorage.h"
+
 #endif
