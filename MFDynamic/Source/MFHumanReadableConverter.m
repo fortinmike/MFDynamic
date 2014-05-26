@@ -9,9 +9,7 @@
 #if TARGET_OS_IPHONE
 	#import <UIKit/UIKit.h>
 #endif
-#import <Collector.h>
 #import "MFHumanReadableConverter.h"
-#import "NSException+Additions.h"
 
 @implementation MFHumanReadableConverter
 

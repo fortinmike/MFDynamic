@@ -7,7 +7,6 @@
 //
 
 #import "MFDynamicStorage.h"
-#import "MFFile.h"
 
 @implementation MFDynamicStorage
 {
@@ -28,14 +27,14 @@
 
 #pragma mark Persistence
 
-- (BOOL)save:(MFFile *)file
+- (BOOL)save:(NSString *)file
 {
-	return [file writeDictionary:_values];
+	return [_values writeToFile:file atomically:YES];
 }
 
-- (BOOL)load:(MFFile *)file
+- (BOOL)load:(NSString *)file
 {
-	_values = [[file readDictionary] mutableCopy];
+	_values = [NSMutableDictionary dictionaryWithContentsOfFile:file];
 	return (_values != nil);
 }
 

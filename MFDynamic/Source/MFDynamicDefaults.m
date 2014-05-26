@@ -8,13 +8,6 @@
 
 #import "MFDynamicDefaults.h"
 
-#import <MARTNSObject.h>
-#import <RTProperty.h>
-#import <RTMethod.h>
-#import "NSString+Additions.h"
-#import "NSException+Additions.h"
-#import "MFFoundation.h"
-
 @implementation MFDynamicDefaults
 
 #pragma mark Lifetime

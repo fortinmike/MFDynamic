@@ -12,9 +12,7 @@
 
 @interface MFDynamicStorage : MFDynamicBase<NSCoding>
 
-#pragma mark Persistence
-
-- (BOOL)save:(MFFile *)file;
-- (BOOL)load:(MFFile *)file;
+- (BOOL)save:(NSString *)file;
+- (BOOL)load:(NSString *)file;
 
 @end

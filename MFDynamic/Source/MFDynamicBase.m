@@ -6,15 +6,8 @@
 //  Copyright (c) 2013 irradiated.net. All rights reserved.
 //
 
-#import <MARTNSObject.h>
-#import <RTProperty.h>
-#import <RTMethod.h>
 #import "MFDynamicBase.h"
-#import "NSString+Additions.h"
-#import "NSException+Additions.h"
-#import "MFFoundation.h"
 #import "MFHumanReadableConverter.h"
-#import "NSString+Regexer.h"
 
 @implementation MFDynamicBase
 
