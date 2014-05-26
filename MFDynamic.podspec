@@ -14,4 +14,6 @@ Pod::Spec.new do |s|
 
   s.source_files = 'MFDynamic/Source'
   s.public_header_files = 'MFDynamic/Source/**/*.h'
+  
+  s.dependency 'MAObjCRuntime', '~> 0.0.1'
 end

@@ -6,10 +6,15 @@
 //  Copyright (c) 2013 irradiated.net. All rights reserved.
 //
 
+#import <MARTNSObject.h>
+#import <RTMethod.h>
+#import <RTProperty.h>
 #import "MFDynamicBase.h"
 #import "MFHumanReadableConverter.h"
 
 @implementation MFDynamicBase
+
+static NSRegularExpression *_typeEncodingClassExtractionRegex;
 
 #pragma mark Lifetime
 
@@ -266,7 +271,21 @@
 
 + (Class)classOfProperty:(RTProperty *)property
 {
-	return NSClassFromString([[[property typeEncoding] rx_textsForGroup:1 withPattern:@"@\"([A-Za-z]*)\""] firstObject]);
+	NSError *error;
+	
+	if (!_typeEncodingClassExtractionRegex)
+		_typeEncodingClassExtractionRegex = [NSRegularExpression regularExpressionWithPattern:@"@\"([A-Za-z]*)\"" options:0 error:&error];
+	
+	NSString *typeEncoding = [property typeEncoding];
+	NSArray *results = [_typeEncodingClassExtractionRegex matchesInString:typeEncoding options:0 range:NSMakeRange(0, [typeEncoding length])];
+	
+	NSTextCheckingResult *result = [results firstObject];
+	if (!result) return nil;
+	
+	NSRange classNameRange = [result rangeAtIndex:1];
+	NSString *className = [typeEncoding substringWithRange:classNameRange];
+	
+	return NSClassFromString(className);
 }
 
 + (NSString *)keyForProperty:(RTProperty *)property
@@ -289,7 +308,8 @@
 
 + (NSException *)unsupportedTypeExceptionForProperty:(RTProperty *)property
 {
-	return [NSException exceptionWithReason:@"Unsupported type encoding '%@' for dynamic property key '%@'. See https://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/ObjCRuntimeGuide/Articles/ocrtTypeEncodings.html#//apple_ref/doc/uid/TP40008048-CH100 for possible type encoding and add support to MFDynamicBase if required.", [property typeEncoding], [self keyForProperty:property]];
+	NSString *reason = [NSString stringWithFormat:@"Unsupported type encoding '%@' for dynamic property key '%@'. See https://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/ObjCRuntimeGuide/Articles/ocrtTypeEncodings.html#//apple_ref/doc/uid/TP40008048-CH100 for possible type encoding and add support to MFDynamicBase if required.", [property typeEncoding], [self keyForProperty:property]];
+	return [NSException exceptionWithName:@"MFDynamic Exception" reason:reason userInfo:nil];
 }
 
 #pragma mark Loading
@@ -327,7 +347,7 @@
 		BOOL shouldEmitWarningForProperty = [self shouldEmitMissingValueWarningWhenLoading:propertyName];
 		
 		if (valueMissing && shouldEmitWarningForProperty)
-			MFLogWarn(@"Missing value for key %@ to fill property \"%@\"", key, propertyName);
+			NSLog(@"Warning: Missing value for key %@ to fill property \"%@\"", key, propertyName);
 	}
 }
 
@@ -335,12 +355,12 @@
 
 - (id)objectForKey:(NSString *)key
 {
-	@throw [NSException exceptionWithReason:@"No backing store; this is an abstract class"];
+	@throw [NSException exceptionWithName:@"MFDynamic Exception" reason:@"No backing store; this is an abstract class" userInfo:nil];
 }
 
 - (void)setObject:(id)object forKey:(NSString *)key
 {
-	@throw [NSException exceptionWithReason:@"No backing store; this is an abstract class"];
+	@throw [NSException exceptionWithName:@"MFDynamic Exception" reason:@"No backing store; this is an abstract class" userInfo:nil];
 }
 
 - (BOOL)shouldEmitMissingValueWarningWhenLoading:(NSString *)propertyName
