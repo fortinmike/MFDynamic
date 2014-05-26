@@ -9,11 +9,11 @@ MFDynamic eliminates NSCoding boilerplate, stringly-typed user defaults and more
 
 ## Overview
 
-### MFDynamicDefaults
+### MFDynamic/Defaults
 
-### MFDynamicStorage
+### MFDynamic/Storage
 
-### MFDynamicBase
+### MFDynamic/Base
 
 ## Installation
 
