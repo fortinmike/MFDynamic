@@ -5,6 +5,9 @@
 //  Created by Michaël Fortin on 11/19/2013.
 //  Copyright (c) 2013 irradiated.net. All rights reserved.
 //
+//  For a list of possible type encodings in Objective-C, see:
+//  https://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/ObjCRuntimeGuide/Articles/ocrtTypeEncodings.html#//apple_ref/doc/uid/TP40008048-CH100
+//
 
 #import <MARTNSObject.h>
 #import <RTMethod.h>
@@ -68,9 +71,6 @@ static NSRegularExpression *_typeEncodingClassExtractionRegex;
 	IMP imp = [self setterImplementationForProperty:property];
 	[self rt_addMethod:[RTMethod methodWithSelector:sel implementation:imp signature:[property typeEncoding]]];
 }
-
-// For a list of possible type encodings in Objective-C, read:
-// https://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/ObjCRuntimeGuide/Articles/ocrtTypeEncodings.html#//apple_ref/doc/uid/TP40008048-CH100
 
 + (IMP)getterImplementationForProperty:(RTProperty *)property
 {
