@@ -21,21 +21,8 @@ static NSRegularExpression *_typeEncodingClassExtractionRegex;
 
 #pragma mark Lifetime
 
-+ (instancetype)sharedDefaults
-{
-	static dispatch_once_t pred;
-	static MFDynamicBase *instance = nil;
-	dispatch_once(&pred, ^{ instance = [[self alloc] init]; });
-	return instance;
-}
-
 + (void)initialize
 {
-	// TODO: Make sure this runs only once per subclass or that there is
-	// no side-effect if this runs more than once as +initialize is not
-	// guaranteed to be called only once.
-	
-	// Read: http://stackoverflow.com/questions/14110396/initialize-called-more-than-once
 	[self implementDefaults];
 }
 
