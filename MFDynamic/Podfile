@@ -1,0 +1,4 @@
+link_with 'MFDynamic.iOS', 'MFDynamic.iOS.Tests', 'MFDynamic.Mac', 'MFDynamic.Mac.Tests'
+
+podspec :path => "../MFDynamic.podspec"
+pod 'Kiwi/XCTest', '~> 2.2.4'
