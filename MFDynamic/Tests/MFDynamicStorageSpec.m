@@ -125,13 +125,6 @@ describe(@"MFDynamicStorage", ^
 			
 			[[theValue([[storage nsCodingImplementer] number]) should] equal:theValue(42)];
 		});
-		
-		it(@"should store scalar values", ^
-		{
-			[storage setIntValue:42];
-			
-			[[theValue([storage intValue]) should] equal:theValue(42)];
-		});
 	});
 	
 	context(@"on-disk storage", ^
