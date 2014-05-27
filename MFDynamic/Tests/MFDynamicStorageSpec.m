@@ -21,7 +21,7 @@ describe(@"MFDynamicStorage", ^
 		storage = [[MFTestStorage alloc] init];
 	});
 	
-	context(@"using accessors", ^
+	context(@"losslessness", ^
 	{
 		it(@"should store and retrieve BOOL (signed char) without loss", ^
 		{
@@ -108,7 +108,7 @@ describe(@"MFDynamicStorage", ^
 		});
 	});
 	
-	context(@"in-memory storage", ^
+	context(@"object compatibility", ^
 	{
 		it(@"should store and retrieve NSDictionary-compatible objects", ^
 		{
