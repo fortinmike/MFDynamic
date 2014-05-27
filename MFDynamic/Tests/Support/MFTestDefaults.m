@@ -12,40 +12,41 @@
 
 #pragma mark Value Types
 
-@dynamic boolDefault;
-@dynamic charDefault;
-@dynamic intDefault;
-@dynamic shortDefault;
-@dynamic longDefault;
-@dynamic longLongDefault;
-@dynamic unsignedCharDefault;
-@dynamic unsignedIntDefault;
-@dynamic unsignedShortDefault;
-@dynamic unsignedLongDefault;
-@dynamic unsignedLongLongDefault;
-@dynamic floatDefault;
-@dynamic doubleDefault;
+@dynamic boolValue;
+@dynamic charValue;
+@dynamic intValue;
+@dynamic shortValue;
+@dynamic longValue;
+@dynamic longLongValue;
+@dynamic unsignedCharValue;
+@dynamic unsignedIntValue;
+@dynamic unsignedShortValue;
+@dynamic unsignedLongValue;
+@dynamic unsignedLongLongValue;
+@dynamic floatValue;
+@dynamic doubleValue;
 
-#pragma mark NSUserDefaults-Supported Types
+#pragma mark NSUserValues-Supported Types
 
-@dynamic dataDefault;
-@dynamic stringDefault;
-@dynamic numberDefault;
-@dynamic dateDefault;
-@dynamic arrayDefault;
-@dynamic dictionaryDefault;
+@dynamic dataValue;
+@dynamic stringValue;
+@dynamic numberValue;
+@dynamic dateValue;
+@dynamic arrayValue;
+@dynamic dictionaryValue;
 
 #pragma mark NSCoding-Conforming Types
 
-@dynamic urlDefault;
+@dynamic urlValue;
+@dynamic nsCodingImplementer;
 
 #if TARGET_OS_IPHONE
-@dynamic uiImageDefault;
-@dynamic uiColorDefault;
+@dynamic uiImageValue;
+@dynamic uiColorValue;
 #endif
 
 #pragma mark id
 
-@dynamic objectDefault;
+@dynamic objectValue;
 
 @end

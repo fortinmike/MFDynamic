@@ -20,41 +20,41 @@
 
 #pragma mark Value Types
 
-@property BOOL boolDefault;
-@property char charDefault;
-@property int intDefault;
-@property short shortDefault;
-@property long longDefault;
-@property long long longLongDefault;
-@property unsigned char unsignedCharDefault;
-@property unsigned int unsignedIntDefault;
-@property unsigned short unsignedShortDefault;
-@property unsigned long unsignedLongDefault;
-@property unsigned long long unsignedLongLongDefault;
-@property float floatDefault;
-@property double doubleDefault;
+@property BOOL boolValue;
+@property char charValue;
+@property int intValue;
+@property short shortValue;
+@property long longValue;
+@property long long longLongValue;
+@property unsigned char unsignedCharValue;
+@property unsigned int unsignedIntValue;
+@property unsigned short unsignedShortValue;
+@property unsigned long unsignedLongValue;
+@property unsigned long long unsignedLongLongValue;
+@property float floatValue;
+@property double doubleValue;
 
-#pragma mark NSUserDefaults-Supported Types
+#pragma mark NSUserValues-Supported Types
 
-@property NSData *dataDefault;
-@property NSString *stringDefault;
-@property NSNumber *numberDefault;
-@property NSDate *dateDefault;
-@property NSArray *arrayDefault;
-@property NSDictionary *dictionaryDefault;
+@property NSData *dataValue;
+@property NSString *stringValue;
+@property NSNumber *numberValue;
+@property NSDate *dateValue;
+@property NSArray *arrayValue;
+@property NSDictionary *dictionaryValue;
 
 #pragma mark NSCoding-Conforming Types
 
-@property NSURL *urlDefault;
+@property NSURL *urlValue;
 @property MFNSCodingImplementer *nsCodingImplementer;
 
 #if TARGET_OS_IPHONE
-@property UIImage *uiImageDefault;
-@property UIColor *uiColorDefault;
+@property UIImage *uiImageValue;
+@property UIColor *uiColorValue;
 #endif
 
 #pragma mark id
 
-@property id objectDefault;
+@property id objectValue;
 
 @end

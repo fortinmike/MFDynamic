@@ -47,13 +47,13 @@ describe(@"MFDynamicDefaults", ^
 		it(@"should have its dynamically-generated setter called", ^
 		{
 			[[[testDefaults->_userDefaults should] receive] setObject:any() forKey:any()];
-			[testDefaults setBoolDefault:YES];
+			[testDefaults setBoolValue:YES];
 		});
 		
 		it(@"should have its dynamically-generated getter called", ^
 		{
 			[[[testDefaults->_userDefaults should] receive] objectForKey:any()];
-			[testDefaults boolDefault];
+			[testDefaults boolValue];
 		});
 		
 		it(@"should store and retrieve NSUserDefaults-supported instances properly", ^
@@ -62,94 +62,94 @@ describe(@"MFDynamicDefaults", ^
 			// https://developer.apple.com/library/ios/DOCUMENTATION/Cocoa/Reference/Foundation/Classes/NSUserDefaults_Class/Reference/Reference.html
 			
 			NSData *data = [@"Data" dataUsingEncoding:NSUTF8StringEncoding];
-			[testDefaults setDataDefault:data];
-			[[[testDefaults dataDefault] should] equal:data];
+			[testDefaults setDataValue:data];
+			[[[testDefaults dataValue] should] equal:data];
 			
 			NSString *string = @"String";
-			[testDefaults setStringDefault:string];
-			[[[testDefaults stringDefault] should] equal:string];
+			[testDefaults setStringValue:string];
+			[[[testDefaults stringValue] should] equal:string];
 			
 			NSNumber *number = @(1023.3551);
-			[testDefaults setNumberDefault:number];
-			[[[testDefaults numberDefault] should] equal:number];
+			[testDefaults setNumberValue:number];
+			[[[testDefaults numberValue] should] equal:number];
 			
 			NSDate *date = [NSDate date];
-			[testDefaults setDateDefault:date];
-			[[[testDefaults dateDefault] should] equal:date];
+			[testDefaults setDateValue:date];
+			[[[testDefaults dateValue] should] equal:date];
 			
 			NSArray *array = @[@"A", @"B", @"C"];
-			[testDefaults setArrayDefault:array];
-			[[[testDefaults arrayDefault] should] equal:array];
+			[testDefaults setArrayValue:array];
+			[[[testDefaults arrayValue] should] equal:array];
 			
 			NSDictionary *dictionary = @{@"A" : @"B", @"C" : @"D"};
-			[testDefaults setDictionaryDefault:dictionary];
-			[[[testDefaults dictionaryDefault] should] equal:dictionary];
+			[testDefaults setDictionaryValue:dictionary];
+			[[[testDefaults dictionaryValue] should] equal:dictionary];
 		});
 		
 		it(@"should store and retrieve NSUserDefaults-supported objects if property is of type id", ^
 		{
 			NSDate *date = [NSDate date];
-			[testDefaults setObjectDefault:date];
-			[[[testDefaults objectDefault] should] equal:date];
+			[testDefaults setObjectValue:date];
+			[[[testDefaults objectValue] should] equal:date];
 			
 			NSString *string = @"String";
-			[testDefaults setObjectDefault:string];
-			[[[testDefaults objectDefault] should] equal:string];
+			[testDefaults setObjectValue:string];
+			[[[testDefaults objectValue] should] equal:string];
 		});
 		
 		it(@"should store and retrieve instances that conform to NSCoding", ^
 		{
 			NSURL *url = [NSURL URLWithString:@"http://www.google.com"];
-			[testDefaults setUrlDefault:url];
-			[[[testDefaults urlDefault] should] equal:url];
+			[testDefaults setUrlValue:url];
+			[[[testDefaults urlValue] should] equal:url];
 			
 #if TARGET_OS_IPHONE
 			UIImage *image = testImage();
-			[testDefaults setImageDefault:image];
+			[testDefaults setImageValue:image];
 			
-			NSData *retrievedImageData = UIImagePNGRepresentation([testDefaults imageDefault]);
+			NSData *retrievedImageData = UIImagePNGRepresentation([testDefaults imageValue]);
 			NSData *expectedImageData = UIImagePNGRepresentation(image);
 			
 			[[retrievedImageData should] equal:expectedImageData];
 			
 			UIColor *color = [UIColor redColor];
-			[testDefaults setColorDefault:color];
-			[[[testDefaults colorDefault] should] equal:color];
+			[testDefaults setColorValue:color];
+			[[[testDefaults colorValue] should] equal:color];
 #endif
 		});
 		
 		it(@"should return value types' default values when nothing exists in user defaults for the accessed value-type property", ^
 		{
-			[[theValue([testDefaults boolDefault]) should] beNo];
-			[[theValue([testDefaults charDefault]) should] equal:theValue(0)];
-			[[theValue([testDefaults intDefault]) should] equal:theValue(0)];
-			[[theValue([testDefaults shortDefault]) should] equal:theValue(0)];
-			[[theValue([testDefaults longDefault]) should] equal:theValue(0)];
-			[[theValue([testDefaults longLongDefault]) should] equal:theValue(0)];
-			[[theValue([testDefaults unsignedCharDefault]) should] equal:theValue(0)];
-			[[theValue([testDefaults unsignedIntDefault]) should] equal:theValue(0)];
-			[[theValue([testDefaults unsignedShortDefault]) should] equal:theValue(0)];
-			[[theValue([testDefaults unsignedLongDefault]) should] equal:theValue(0)];
-			[[theValue([testDefaults unsignedLongLongDefault]) should] equal:theValue(0)];
-			[[theValue([testDefaults floatDefault]) should] equal:0 withDelta:FLT_EPSILON];
-			[[theValue([testDefaults doubleDefault]) should] equal:0 withDelta:DBL_EPSILON];
+			[[theValue([testDefaults boolValue]) should] beNo];
+			[[theValue([testDefaults charValue]) should] equal:theValue(0)];
+			[[theValue([testDefaults intValue]) should] equal:theValue(0)];
+			[[theValue([testDefaults shortValue]) should] equal:theValue(0)];
+			[[theValue([testDefaults longValue]) should] equal:theValue(0)];
+			[[theValue([testDefaults longLongValue]) should] equal:theValue(0)];
+			[[theValue([testDefaults unsignedCharValue]) should] equal:theValue(0)];
+			[[theValue([testDefaults unsignedIntValue]) should] equal:theValue(0)];
+			[[theValue([testDefaults unsignedShortValue]) should] equal:theValue(0)];
+			[[theValue([testDefaults unsignedLongValue]) should] equal:theValue(0)];
+			[[theValue([testDefaults unsignedLongLongValue]) should] equal:theValue(0)];
+			[[theValue([testDefaults floatValue]) should] equal:0 withDelta:FLT_EPSILON];
+			[[theValue([testDefaults doubleValue]) should] equal:0 withDelta:DBL_EPSILON];
 		});
 		
 		it(@"should return nil when nothing exists in user defaults for the accessed object property", ^
 		{
-			[[[testDefaults dataDefault] should] beNil];
-			[[[testDefaults stringDefault] should] beNil];
-			[[[testDefaults numberDefault] should] beNil];
-			[[[testDefaults dateDefault] should] beNil];
-			[[[testDefaults arrayDefault] should] beNil];
-			[[[testDefaults dictionaryDefault] should] beNil];
+			[[[testDefaults dataValue] should] beNil];
+			[[[testDefaults stringValue] should] beNil];
+			[[[testDefaults numberValue] should] beNil];
+			[[[testDefaults dateValue] should] beNil];
+			[[[testDefaults arrayValue] should] beNil];
+			[[[testDefaults dictionaryValue] should] beNil];
 			
 #if TARGET_OS_IPHONE
-			[[[testDefaults imageDefault] should] beNil];
-			[[[testDefaults colorDefault] should] beNil];
+			[[[testDefaults imageValue] should] beNil];
+			[[[testDefaults colorValue] should] beNil];
 #endif
 			
-			[[[testDefaults objectDefault] should] beNil];
+			[[[testDefaults objectValue] should] beNil];
 		});
 	});
 	
@@ -159,10 +159,10 @@ describe(@"MFDynamicDefaults", ^
 		{
 			NSDate *date = [NSDate date];
 			NSArray *array = @[@"A", @"B"];
-			[testDefaults registerDefaults:@{@"BoolDefault" : @(YES), @"DateDefault" : date, @"ArrayDefault" : array}];
-			[[theValue([testDefaults boolDefault]) should] beYes];
-			[[theValue([[testDefaults dateDefault] compare:date] == NSOrderedSame) should] beYes];
-			[[[testDefaults arrayDefault] should] equal:array];
+			[testDefaults registerDefaults:@{@"BoolValue" : @(YES), @"DateValue" : date, @"ArrayValue" : array}];
+			[[theValue([testDefaults boolValue]) should] beYes];
+			[[theValue([[testDefaults dateValue] compare:date] == NSOrderedSame) should] beYes];
+			[[[testDefaults arrayValue] should] equal:array];
 		});
 	});
 });
