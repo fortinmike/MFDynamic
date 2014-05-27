@@ -1,9 +1,9 @@
 #!/bin/sh
 set -e
 
-cd MFDynamic
+cd "$1"
 
 pod install
 
-xctool -workspace MFDynamic.xcworkspace -scheme MFDynamic.iOS test
-xctool -workspace MFDynamic.xcworkspace -scheme MFDynamic.Mac test
+xctool -workspace "$1.xcworkspace" -scheme "$1.iOS" test
+xctool -workspace "$1.xcworkspace" -scheme "$1.Mac" test
