@@ -8,8 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@class RTProperty;
-
 @interface MFDynamicBase : NSObject
 
 #pragma mark Loading
