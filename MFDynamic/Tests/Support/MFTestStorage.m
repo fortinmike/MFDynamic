@@ -38,6 +38,7 @@
 #pragma mark NSCoding-Conforming Types
 
 @dynamic urlValue;
+@dynamic nsCodingImplementer;
 
 #if TARGET_OS_IPHONE
 @dynamic uiImageValue;

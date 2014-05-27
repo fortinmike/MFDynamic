@@ -138,6 +138,8 @@ describe(@"MFDynamicStorage", ^
 	{
 		it(@"should store its values on disk and retrieve them without loss", ^
 		{
+			NSString *tempFile = [NSString stringWithFormat:@"%@/MFDynamicStorageTempFile", NSTemporaryDirectory()];
+			
 			MFNSCodingImplementer *nsCodingImplementer = [[MFNSCodingImplementer alloc] init];
 			[nsCodingImplementer setNumber:2];
 			
@@ -146,17 +148,15 @@ describe(@"MFDynamicStorage", ^
 			[storage setIntValue:42];
 			[storage setNsCodingImplementer:nsCodingImplementer];
 			
-			// TODO:
-			
 			// Archive the file and validate that it succeeded
-//			BOOL success = [NSKeyedArchiver archiveRootObject:storage toFile:file];
-//			[[theValue(success) should] beYes];
+			BOOL success = [NSKeyedArchiver archiveRootObject:storage toFile:tempFile];
+			[[theValue(success) should] beYes];
 			
 			// Unarchive the file and check values
-//			MFTestStorage *unarchived = [file unarchive];
-//			[[[unarchived string] should] equal:@"My Value"];
-//			[[theValue([unarchived integer]) should] equal:theValue(42)];
-//			[[theValue([[unarchived nsCodingImplementer] number]) should] equal:theValue(2)];
+			MFTestStorage *unarchived = [NSKeyedUnarchiver unarchiveObjectWithFile:tempFile];
+			[[[unarchived stringValue] should] equal:@"My Value"];
+			[[theValue([unarchived intValue]) should] equal:theValue(42)];
+			[[theValue([[unarchived nsCodingImplementer] number]) should] equal:theValue(2)];
 		});
 	});
 });
