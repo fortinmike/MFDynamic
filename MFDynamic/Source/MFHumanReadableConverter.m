@@ -8,7 +8,10 @@
 
 #if TARGET_OS_IPHONE
 	#import <UIKit/UIKit.h>
+#else
+	#import <Cocoa/Cocoa.h>
 #endif
+
 #import "MFHumanReadableConverter.h"
 
 @implementation MFHumanReadableConverter
@@ -23,6 +26,9 @@
 #if TARGET_OS_IPHONE
 	if ([object isKindOfClass:[UIColor class]])
 		return [self stringRepresentationWithUIColor:object];
+#else
+	if ([object isKindOfClass:[NSColor class]])
+		return [self stringRepresentationWithNSColor:object];
 #endif
 	
 	return nil;
@@ -38,6 +44,9 @@
 #if TARGET_OS_IPHONE
 	if (targetType == [UIColor class])
 		return [self UIColorWithStringRepresentation:object];
+#else
+	if (targetType == [NSColor class])
+		return [self NSColorWithStringRepresentation:object];
 #endif
 	
 	return nil;
@@ -58,35 +67,80 @@
 	return [NSURL URLWithString:stringRepresentation];
 }
 
-#pragma mark UIColor Conversion
+#pragma mark UIColor and NSColor Conversion
 
 #if TARGET_OS_IPHONE
+
 + (NSString *)stringRepresentationWithUIColor:(UIColor *)color
 {
 	CGFloat red, green, blue, alpha;
 	[color getRed:&red green:&green blue:&blue alpha:&alpha];
 	
-	return [NSString stringWithFormat:@"color(%f, %f, %f, %f)", red, green, blue, alpha];
+	return [self HEXColorStringWithRed:red green:green blue:blue alpha:alpha];
 }
 
 + (UIColor *)UIColorWithStringRepresentation:(NSString *)stringRepresentation
 {
-	NSString *componentsString = [stringRepresentation substringFromIndex:6];
-	NSArray *components = [[componentsString componentsSeparatedByString:@","] ct_map:^id(NSString *string)
-	{
-		return [string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-	}];
-	
-	if ([components count] != 4)
-		@throw [NSException exceptionWithReason:@"Couldn't parse color from string %@", stringRepresentation];
-	
-	CGFloat red = [components[0] floatValue];
-	CGFloat green = [components[1] floatValue];
-	CGFloat blue = [components[2] floatValue];
-	CGFloat alpha = [components[3] floatValue];
+	CGFloat red, green, blue, alpha;
+	[self red:&red green:&green blue:&blue alpha:&alpha fromHEXColorString:stringRepresentation];
 	
 	return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
 }
+
+#else
+
++ (NSString *)stringRepresentationWithNSColor:(NSColor *)color
+{
+	CGFloat red, green, blue, alpha;
+	[color getRed:&red green:&green blue:&blue alpha:&alpha];
+	
+	return [self HEXColorStringWithRed:red green:green blue:blue alpha:alpha];
+}
+
++ (NSColor *)NSColorWithStringRepresentation:(NSString *)stringRepresentation
+{
+	CGFloat red, green, blue, alpha;
+	[self red:&red green:&green blue:&blue alpha:&alpha fromHEXColorString:stringRepresentation];
+	
+	return [NSColor colorWithCalibratedRed:red green:green blue:blue alpha:alpha];
+}
+
 #endif
+
+#pragma mark Private Helpers
+
++ (NSString *)HEXColorStringWithRed:(CGFloat)red green:(CGFloat)green blue:(CGFloat)blue alpha:(CGFloat)alpha
+{
+	return nil;
+}
+
++ (void)red:(CGFloat *)red green:(CGFloat *)green blue:(CGFloat *)blue alpha:(CGFloat *)alpha fromHEXColorString:(NSString *)hexColorString
+{
+	if ([hexColorString length] < 6)
+	{
+		// Without alpha
+		*red = [self colorComponentFromHex:hexColorString range:NSMakeRange(0, 2)];
+		*green = [self colorComponentFromHex:hexColorString range:NSMakeRange(2, 2)];
+		*blue = [self colorComponentFromHex:hexColorString range:NSMakeRange(4, 2)];
+	}
+	else if ([hexColorString length] == 8)
+	{
+		// With alpha
+		*red = [self colorComponentFromHex:hexColorString range:NSMakeRange(0, 2)];
+		*green = [self colorComponentFromHex:hexColorString range:NSMakeRange(2, 2)];
+		*blue = [self colorComponentFromHex:hexColorString range:NSMakeRange(4, 2)];
+		*alpha = [self colorComponentFromHex:hexColorString range:NSMakeRange(6, 2)];
+	}
+}
+
++ (unsigned int)colorComponentFromHex:(NSString *)hexString range:(NSRange)range
+{
+	NSString *substring = [hexString substringWithRange:range];
+	
+	unsigned int integer;
+	return [[NSScanner scannerWithString:substring] scanHexInt:&integer];
+	
+	return integer;
+}
 
 @end
