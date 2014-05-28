@@ -6,54 +6,6 @@
 //  Copyright (c) 2013 Michaël Fortin. All rights reserved.
 //
 
-//
-//  Usage:
-//               1- Subclass MFDynamicDefaults
-//
-//               2- Declare one property per user default:
-//                  @property NSString *userName;
-//                  @property int appLaunchCount;
-//                  ...
-//
-//               3- Define properties as @dynamic in your subclass' implementation.
-//                  Your class should only contain @dynamic properties. Any non-dynamic property will cause an exception to be raised.
-//
-//               4- Obtain the shared instance of your subclass and use its properties:
-//
-//                  [[MYDefaults sharedDefaults] setLaunchAtStartup:newValue];
-//                  BOOL launchAtStartup = [[MYDefaults sharedDefaults] launchAtStartup];
-//
-//                      instead of
-//
-//                  [[NSUserDefaults standardUserDefaults] setBool:newValue forKey:@"LaunchAtStartup"];
-//                  BOOL launchAtStartup = [[NSUserDefaults standardUserDefaults] boolForKey:@"LaunchAtStartup"];
-//
-//  Property Name / User Default Key Mapping:
-//
-//                 [Property Name]                    [User Defaults Key]         [Note]
-//
-//                 launchAtStartup          ->        LaunchAtStartup             First letter was automatically capitalized (recommended)
-//                 MYSuperPropertyName      ->        MYSuperPropertyName         The name stays as-is because the first letter was already capitalized
-//                 MySuperPropertyName      ->        MySuperPropertyName         Same as above
-//
-//  Notes:
-//               - Almost all Objective-C value types are supported. An exception is thrown when a property is of an unsupported type.
-//
-//               - You can declare any property whose type is supported by NSUserDefaults.
-//
-//               - You can declare any property whose type is not supported by NSUserDefaults but that implements NSCoding (such as
-//                 UIImage, UIColor, or any of your own NSCoding-implementing classes) and it will be transparently converted to and
-//                 from NSData for storage in NSUserDefaults.
-//
-//               - By default, MFDynamicDefaults emits a warning when one of its dynamic properties doesn't have a default value
-//                 in the registered defaults dictionary. This helps to make sure a default value is always provided when relevant.
-//                 Warnings can be disabled per-property by implementing the -shouldEmitWarningForProperty: template method or can
-//                 be disabled completely by calling -registerDefaults:emitMissingDefaultValueWarnings: with NO.
-//
-//               - Only the "readonly" attribute is currently considered when generating accessor implementations.
-//                 Any other attributes are ignored.
-//
-
 #import <Foundation/Foundation.h>
 #import "MFDynamicBase.h"
 
@@ -76,7 +28,20 @@
 
 #pragma mark Other Public Methods
 
-- (void)registerDefaults:(NSDictionary *)defaults; // Registers defaults just like NSUserDefaults, emits warnings for missing default values
+/**
+ *  Registers defaults, just like -[NSUserDefaults registerDefaults:]. Emits warnings for missing default values,
+ *  that is for properties that do not have a corresponding value in the provided defaults dictionary.
+ *
+ *  @param defaults The defaults to register.
+ */
+- (void)registerDefaults:(NSDictionary *)defaults;
+
+/**
+ *  Registers defaults, just like -[NSUserDefaults registerDefaults:].
+ *
+ *  @param defaults     The defaults to register.
+ *  @param emitWarnings Whether to emit warnings for missing default values or not.
+ */
 - (void)registerDefaults:(NSDictionary *)defaults emitMissingDefaultValueWarnings:(BOOL)emitWarnings;
 - (void)synchronize;
 

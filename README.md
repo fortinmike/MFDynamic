@@ -3,11 +3,7 @@
 [![Version](http://cocoapod-badges.herokuapp.com/v/MFDynamic/badge.png)](http://cocoadocs.org/docsets/MFDynamic)
 [![Platform](http://cocoapod-badges.herokuapp.com/p/MFDynamic/badge.png)](http://cocoadocs.org/docsets/MFDynamic)
 
-MFDynamic eliminates NSCoding boilerplate, stringly-typed user defaults and more.
-
-## Features
-
-
+MFDynamic eliminates stringly-typed User Defaults, NSCoding boilerplate and more.
 
 ## MFDynamicDefaults
 
@@ -21,7 +17,7 @@ MFDynamic eliminates NSCoding boilerplate, stringly-typed user defaults and more
 - Some types are transparently **converted to human-readable formats** and back for storage in User Defaults for easy editing in Plist editors.
 - Helps you **remember to provide default values** in your registered defaults by emitting warnings for missing default values when registering defaults (optional).
 
-#### With MFDynamicDefaults:
+Work with User Defaults like this:
 
 ```
 [[MYDefaults sharedDefaults] setBackgroundColor:newBackgroundColor];
@@ -29,7 +25,8 @@ MFDynamic eliminates NSCoding boilerplate, stringly-typed user defaults and more
 UIColor *color = [[MYDefaults sharedDefaults] backgroundColor];
 ```
 
-#### Without MFDynamicDefaults:
+... instead of like this:
+
 
 ```
 FOUNDATION_EXPORT static NSString *MYBackgroundColorKey;
@@ -43,13 +40,61 @@ NSData *colorData = [[NSUserDefaults standardUserDefaults] objectForKey:MYBackgr
 UIColor *color = [NSKeyedUnarchiver unarchiveObjectWithData:colorData];
 ```
 
+### Usage
+
+1. Subclass `MFDynamicDefaults`.
+2. Define `@dynamic` properties for each user default:
+
+	**Interface**
+	
+	```
+	@interface MYAppDefaults : MFDynamicDefaults
+	
+	@property BOOL autoPlayVoiceOver;
+	@property NSTimeInterval loginTimeoutInterval;
+	@property NSDate *lastUpdate;
+		
+	@end
+	```
+	
+	**Implementation**
+	
+	```
+	@implementation MYAppDefaults
+	
+	@property autoPlayVoiceOver;
+	@property loginTimeoutInterval;
+	@property lastUpdate;
+	
+	@end
+	```
+	
+3. Use the shared instance of your `MYAppDefaults` class to access user defaults:
+
+	```
+	[[MYDefaults sharedDefaults] setAutoPlayVoiceOver:YES];
+	
+	BOOL autoPlayVoiceOver = [[MYDefaults sharedDefaults] autoPlayVoiceOver];
+	```
+
+### Registering Defaults
+
+Like `NSUserDefaults`, `MFDynamicDefaults` allows registering defaults from a dictionary:
+
+```
+NSDictionary *defaults = [NSDictionary dictionaryWithContentsOfFile:@"/Path/To/Plist/File"];
+[[MYAppDefaults sharedDefaults] registerDefaults:defaults emitMissingDefaultValueWarnings:YES];
+```
+
+By default, `MFDynamicDefaults` emits a warning when one of its dynamic properties doesn't have a default value in the registered defaults dictionary. This can help you remember to provide default values for your user defaults. Warnings can be disabled per-property by implementing the `-shouldEmitWarningForProperty:` template method in your `MFDynamicDefaults` subclass.
+
 ## MFDynamicStorage
 
 `MFDynamicStorage` works exactly like `MFDynamicDefault` but uses a simple dictionary as its backing store instead of `NSUserDefaults`. The main use case for `MFDynamicStorage` is a model class that must be stored to disk. Instead of using "normal" synthesized properties and implementing `NSCoding` manually (which can be very error-prone), you simply subclass `MFDynamicStorage` and use `@dynamic` properties.
 
-#### How To Use
+### Usage
 
-1. Subclass `MFDynamicStorage` (say, `MYModelClass : MFDynamicStoarge`).
+1. Subclass `MFDynamicStorage`.
 2. Define properties that must be archived as `@dynamic`:
 
 	**Interface**
@@ -89,7 +134,21 @@ UIColor *color = [NSKeyedUnarchiver unarchiveObjectWithData:colorData];
 	MYModelClass *modelClass = [MYModelClass loadFromFile:@"/Users/Michael/Desktop/WhyAmISavingAModelFileToTheDesktop"];
 	```
 
-## MFDynamicBase
+## Implementation Details
+
+- Almost all [Objective-C value types](https://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/ObjCRuntimeGuide/Articles/ocrtTypeEncodings.html#//apple_ref/doc/uid/TP40008048-CH100) are supported. An exception is thrown when a property is of an unsupported type.
+- Most property qualifiers (such as `assign`, `copy`, `weak` and `strong`) are ignored (which is why you don't see them used anywhere in the samples above). The only exception to this rule is `readonly`. If a property is declared as `readonly`, MFDynamicBase won't implement a setter for that property.
+
+
+#### Property Name <---> User Default Key Mapping
+
+When MFDynamic stores objects in its backing store (be it `NSUserDefaults` like `MFDynamicDefaults` or a simple `NSDictionary` like `MFDynamicStorage`), it does so by capitalizing the first letter of the property name and using the resulting string as the key:
+
+Property Name | User Defaults Key | Explanation
+--------------|-------------------|-----
+launchAtStartup | LaunchAtStartup | First letter was capitalized (recommended Objective-C style)
+MYSuperPropertyName | MYSuperPropertyName | The key is the same as the property name because the first letter was already capitalized
+MySuperPropertyName | MySuperPropertyName | The key is the same as the property name because the first letter was already capitalized
 
 ## Installation
 
