@@ -64,55 +64,55 @@ static NSRegularExpression *_typeEncodingClassExtractionRegex;
 	NSString *key = [self keyForProperty:property];
 	
 	if ([self isProperty:property ofType:@encode(char)])
-		return imp_implementationWithBlock(^(MFDynamicBase *iSelf) { return [[iSelf objectForKey:key] charValue]; });
+		return imp_implementationWithBlock(^(MFDynamicBase *iSelf) { return [[iSelf rawObjectForKey:key] charValue]; });
 	
 	if ([self isProperty:property ofType:@encode(int)])
-		return imp_implementationWithBlock(^(MFDynamicBase *iSelf) { return [[iSelf objectForKey:key] intValue]; });
+		return imp_implementationWithBlock(^(MFDynamicBase *iSelf) { return [[iSelf rawObjectForKey:key] intValue]; });
 	
 	if ([self isProperty:property ofType:@encode(short)])
-		return imp_implementationWithBlock(^(MFDynamicBase *iSelf) { return [[iSelf objectForKey:key] shortValue]; });
+		return imp_implementationWithBlock(^(MFDynamicBase *iSelf) { return [[iSelf rawObjectForKey:key] shortValue]; });
 	
 	if ([self isProperty:property ofType:@encode(long)])
-		return imp_implementationWithBlock(^(MFDynamicBase *iSelf) { return [[iSelf objectForKey:key] longValue]; });
+		return imp_implementationWithBlock(^(MFDynamicBase *iSelf) { return [[iSelf rawObjectForKey:key] longValue]; });
 	
 	if ([self isProperty:property ofType:@encode(long long)])
-		return imp_implementationWithBlock(^(MFDynamicBase *iSelf) { return [[iSelf objectForKey:key] longLongValue]; });
+		return imp_implementationWithBlock(^(MFDynamicBase *iSelf) { return [[iSelf rawObjectForKey:key] longLongValue]; });
 	
 	if ([self isProperty:property ofType:@encode(unsigned char)])
-		return imp_implementationWithBlock(^(MFDynamicBase *iSelf) { return [[iSelf objectForKey:key] unsignedCharValue]; });
+		return imp_implementationWithBlock(^(MFDynamicBase *iSelf) { return [[iSelf rawObjectForKey:key] unsignedCharValue]; });
 	
 	if ([self isProperty:property ofType:@encode(unsigned int)])
-		return imp_implementationWithBlock(^(MFDynamicBase *iSelf) { return [[iSelf objectForKey:key] unsignedIntValue]; });
+		return imp_implementationWithBlock(^(MFDynamicBase *iSelf) { return [[iSelf rawObjectForKey:key] unsignedIntValue]; });
 	
 	if ([self isProperty:property ofType:@encode(unsigned short)])
-		return imp_implementationWithBlock(^(MFDynamicBase *iSelf) { return [[iSelf objectForKey:key] unsignedShortValue]; });
+		return imp_implementationWithBlock(^(MFDynamicBase *iSelf) { return [[iSelf rawObjectForKey:key] unsignedShortValue]; });
 	
 	if ([self isProperty:property ofType:@encode(unsigned long)])
-		return imp_implementationWithBlock(^(MFDynamicBase *iSelf) { return [[iSelf objectForKey:key] unsignedLongValue]; });
+		return imp_implementationWithBlock(^(MFDynamicBase *iSelf) { return [[iSelf rawObjectForKey:key] unsignedLongValue]; });
 	
 	if ([self isProperty:property ofType:@encode(unsigned long long)])
-		return imp_implementationWithBlock(^(MFDynamicBase *iSelf) { return [[iSelf objectForKey:key] unsignedLongLongValue]; });
+		return imp_implementationWithBlock(^(MFDynamicBase *iSelf) { return [[iSelf rawObjectForKey:key] unsignedLongLongValue]; });
 	
 	if ([self isProperty:property ofType:@encode(float)])
-		return imp_implementationWithBlock(^(MFDynamicBase *iSelf) { return [[iSelf objectForKey:key] floatValue]; });
+		return imp_implementationWithBlock(^(MFDynamicBase *iSelf) { return [[iSelf rawObjectForKey:key] floatValue]; });
 	
 	if ([self isProperty:property ofType:@encode(double)])
-		return imp_implementationWithBlock(^(MFDynamicBase *iSelf) { return [[iSelf objectForKey:key] doubleValue]; });
+		return imp_implementationWithBlock(^(MFDynamicBase *iSelf) { return [[iSelf rawObjectForKey:key] doubleValue]; });
 	
 	if ([self isProperty:property ofType:@encode(BOOL)])
-		return imp_implementationWithBlock(^(MFDynamicBase *iSelf) { return [[iSelf objectForKey:key] boolValue]; });
+		return imp_implementationWithBlock(^(MFDynamicBase *iSelf) { return [[iSelf rawObjectForKey:key] boolValue]; });
 	
 	if ([self isObject:property])
 	{
 		if ([self isKindOfPropertyArchivableAsIs:property] || [self isProperty:property ofType:@encode(id)])
 		{
-			return imp_implementationWithBlock(^(MFDynamicBase *iSelf) { return [iSelf objectForKey:key]; });
+			return imp_implementationWithBlock(^(MFDynamicBase *iSelf) { return [iSelf rawObjectForKey:key]; });
 		}
 		else if ([self isProperty:property ofKind:[NSURL class]])
 		{
 			return imp_implementationWithBlock(^(MFDynamicBase *iSelf)
 			{
-				return [MFHumanReadableConverter convertFromHumanReadable:[iSelf objectForKey:key] withTargetType:[NSURL class]];
+				return [MFHumanReadableConverter convertFromHumanReadable:[iSelf rawObjectForKey:key] withTargetType:[NSURL class]];
 			});
 		}
 #if TARGET_OS_IPHONE
@@ -128,7 +128,7 @@ static NSRegularExpression *_typeEncodingClassExtractionRegex;
 		{
 			return imp_implementationWithBlock(^(MFDynamicBase *iSelf)
 		    {
-				NSData *data = [iSelf objectForKey:key];
+				NSData *data = [iSelf rawObjectForKey:key];
 			    if (![data isKindOfClass:[NSData class]]) return (id)nil;
 			    return [NSKeyedUnarchiver unarchiveObjectWithData:data];
 			});
@@ -143,55 +143,55 @@ static NSRegularExpression *_typeEncodingClassExtractionRegex;
 	NSString *key = [self keyForProperty:property];
 	
 	if ([self isProperty:property ofType:@encode(char)])
-		return imp_implementationWithBlock(^(MFDynamicBase *iSelf, char value) { return [iSelf setObject:@(value) forKey:key]; });
+		return imp_implementationWithBlock(^(MFDynamicBase *iSelf, char value) { return [iSelf setRawObject:@(value) forKey:key]; });
 	
 	if ([self isProperty:property ofType:@encode(int)])
-		return imp_implementationWithBlock(^(MFDynamicBase *iSelf, int value) { return [iSelf setObject:@(value) forKey:key]; });
+		return imp_implementationWithBlock(^(MFDynamicBase *iSelf, int value) { return [iSelf setRawObject:@(value) forKey:key]; });
 	
 	if ([self isProperty:property ofType:@encode(short)])
-		return imp_implementationWithBlock(^(MFDynamicBase *iSelf, short value) { return [iSelf setObject:@(value) forKey:key]; });
+		return imp_implementationWithBlock(^(MFDynamicBase *iSelf, short value) { return [iSelf setRawObject:@(value) forKey:key]; });
 	
 	if ([self isProperty:property ofType:@encode(long)])
-		return imp_implementationWithBlock(^(MFDynamicBase *iSelf, long value) { return [iSelf setObject:@(value) forKey:key]; });
+		return imp_implementationWithBlock(^(MFDynamicBase *iSelf, long value) { return [iSelf setRawObject:@(value) forKey:key]; });
 	
 	if ([self isProperty:property ofType:@encode(long long)])
-		return imp_implementationWithBlock(^(MFDynamicBase *iSelf, long long value) { return [iSelf setObject:@(value) forKey:key]; });
+		return imp_implementationWithBlock(^(MFDynamicBase *iSelf, long long value) { return [iSelf setRawObject:@(value) forKey:key]; });
 	
 	if ([self isProperty:property ofType:@encode(unsigned char)])
-		return imp_implementationWithBlock(^(MFDynamicBase *iSelf, unsigned char value) { return [iSelf setObject:@(value) forKey:key]; });
+		return imp_implementationWithBlock(^(MFDynamicBase *iSelf, unsigned char value) { return [iSelf setRawObject:@(value) forKey:key]; });
 	
 	if ([self isProperty:property ofType:@encode(unsigned int)])
-		return imp_implementationWithBlock(^(MFDynamicBase *iSelf, unsigned int value) { return [iSelf setObject:@(value) forKey:key]; });
+		return imp_implementationWithBlock(^(MFDynamicBase *iSelf, unsigned int value) { return [iSelf setRawObject:@(value) forKey:key]; });
 	
 	if ([self isProperty:property ofType:@encode(unsigned short)])
-		return imp_implementationWithBlock(^(MFDynamicBase *iSelf, unsigned short value) { return [iSelf setObject:@(value) forKey:key]; });
+		return imp_implementationWithBlock(^(MFDynamicBase *iSelf, unsigned short value) { return [iSelf setRawObject:@(value) forKey:key]; });
 	
 	if ([self isProperty:property ofType:@encode(unsigned long)])
-		return imp_implementationWithBlock(^(MFDynamicBase *iSelf, unsigned long value) { return [iSelf setObject:@(value) forKey:key]; });
+		return imp_implementationWithBlock(^(MFDynamicBase *iSelf, unsigned long value) { return [iSelf setRawObject:@(value) forKey:key]; });
 	
 	if ([self isProperty:property ofType:@encode(unsigned long long)])
-		return imp_implementationWithBlock(^(MFDynamicBase *iSelf, unsigned long long value) { return [iSelf setObject:@(value) forKey:key]; });
+		return imp_implementationWithBlock(^(MFDynamicBase *iSelf, unsigned long long value) { return [iSelf setRawObject:@(value) forKey:key]; });
 	
 	if ([self isProperty:property ofType:@encode(float)])
-		return imp_implementationWithBlock(^(MFDynamicBase *iSelf, float value) { return [iSelf setObject:@(value) forKey:key]; });
+		return imp_implementationWithBlock(^(MFDynamicBase *iSelf, float value) { return [iSelf setRawObject:@(value) forKey:key]; });
 	
 	if ([self isProperty:property ofType:@encode(double)])
-		return imp_implementationWithBlock(^(MFDynamicBase *iSelf, double value) { return [iSelf setObject:@(value) forKey:key]; });
+		return imp_implementationWithBlock(^(MFDynamicBase *iSelf, double value) { return [iSelf setRawObject:@(value) forKey:key]; });
 	
 	if ([self isProperty:property ofType:@encode(BOOL)])
-		return imp_implementationWithBlock(^(MFDynamicBase *iSelf, BOOL value) { return [iSelf setObject:@(value) forKey:key]; });
+		return imp_implementationWithBlock(^(MFDynamicBase *iSelf, BOOL value) { return [iSelf setRawObject:@(value) forKey:key]; });
 	
 	if ([self isObject:property])
 	{
 		if ([self isKindOfPropertyArchivableAsIs:property] || [self isProperty:property ofType:@encode(id)])
 		{
-			return imp_implementationWithBlock(^(MFDynamicBase *iSelf, id value) { [iSelf setObject:value forKey:key]; });
+			return imp_implementationWithBlock(^(MFDynamicBase *iSelf, id value) { [iSelf setRawObject:value forKey:key]; });
 		}
 		else if ([self isProperty:property ofKind:[NSURL class]])
 		{
 			return imp_implementationWithBlock(^(MFDynamicBase *iSelf, NSURL *url)
 			{
-				[iSelf setObject:[MFHumanReadableConverter convertToHumanReadable:url] forKey:key];
+				[iSelf setRawObject:[MFHumanReadableConverter convertToHumanReadable:url] forKey:key];
 			});
 		}
 #if TARGET_OS_IPHONE
@@ -208,13 +208,13 @@ static NSRegularExpression *_typeEncodingClassExtractionRegex;
 			return imp_implementationWithBlock(^(MFDynamicBase *iSelf, id value)
 		    {
 				NSData *data = [NSKeyedArchiver archivedDataWithRootObject:value];
-				[iSelf setObject:data forKey:key];
+				[iSelf setRawObject:data forKey:key];
 			});
 		}
 	}
 	
 	if ([self isObject:property])
-		return imp_implementationWithBlock(^(MFDynamicBase *iSelf, id value) { return [iSelf setObject:value forKey:key]; });
+		return imp_implementationWithBlock(^(MFDynamicBase *iSelf, id value) { return [iSelf setRawObject:value forKey:key]; });
 	
 	@throw [self unsupportedTypeExceptionForProperty:property];
 }
@@ -310,14 +310,11 @@ static NSRegularExpression *_typeEncodingClassExtractionRegex;
 
 - (void)loadValues:(NSDictionary *)values emitMissingValueWarnings:(BOOL)emitWarnings
 {
-	// Load values using the template method (because we know nothing of the backing store)
+	// Load values using the setObject:forKey: template method
+	// (we know nothing of the backing store at that abstraction level)
 	for (NSString *key in [values allKeys])
-		[self setObject:values[key] forKey:key];
+		[self setRawObject:values[key] forKey:key];
 	
-	// Emit warnings for any dynamic property that doesn't have a default value
-	// in the given dictionary. Useful to make sure we don't forget to set a default
-	// value for a property when loading values. Warnings can be disabled
-	// per-property using the appropriate template method.
 	if (emitWarnings) [self checkForMissingValuesAndEmitWarnings];
 }
 
@@ -330,8 +327,8 @@ static NSRegularExpression *_typeEncodingClassExtractionRegex;
 		NSString *key = [[self class] keyForProperty:property];
 		NSString *propertyName = [property name];
 		
-		BOOL valueMissing = ([self objectForKey:key] == nil);
-		BOOL shouldEmitWarningForProperty = [self shouldEmitMissingValueWarningWhenLoading:propertyName];
+		BOOL valueMissing = ([self rawObjectForKey:key] == nil);
+		BOOL shouldEmitWarningForProperty = [self shouldEmitMissingValueWarningForProperty:propertyName];
 		
 		if (valueMissing && shouldEmitWarningForProperty)
 			NSLog(@"Warning: Missing value for key %@ to fill property \"%@\"", key, propertyName);
@@ -340,17 +337,17 @@ static NSRegularExpression *_typeEncodingClassExtractionRegex;
 
 #pragma mark Template Methods
 
-- (id)objectForKey:(NSString *)key
+- (id)rawObjectForKey:(NSString *)key
 {
 	@throw [NSException exceptionWithName:@"MFDynamic Exception" reason:@"No backing store; this is an abstract class" userInfo:nil];
 }
 
-- (void)setObject:(id)object forKey:(NSString *)key
+- (void)setRawObject:(id)object forKey:(NSString *)key
 {
 	@throw [NSException exceptionWithName:@"MFDynamic Exception" reason:@"No backing store; this is an abstract class" userInfo:nil];
 }
 
-- (BOOL)shouldEmitMissingValueWarningWhenLoading:(NSString *)propertyName
+- (BOOL)shouldEmitMissingValueWarningForProperty:(NSString *)propertyName
 {
 	return NO;
 }

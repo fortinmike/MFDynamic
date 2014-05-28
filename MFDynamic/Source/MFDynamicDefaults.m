@@ -53,17 +53,17 @@
 
 #pragma mark Superclass Template Methods Implementation
 
-- (id)objectForKey:(NSString *)key
+- (id)rawObjectForKey:(NSString *)key
 {
 	return [_userDefaults objectForKey:key];
 }
 
-- (void)setObject:(id)object forKey:(NSString *)key
+- (void)setRawObject:(id)object forKey:(NSString *)key
 {
 	[_userDefaults setObject:object forKey:key];
 }
 
-- (BOOL)shouldEmitMissingValueWarningWhenLoading:(NSString *)propertyName
+- (BOOL)shouldEmitMissingValueWarningForProperty:(NSString *)propertyName
 {
 	// By default, MFDynamicDefaults emits warnings for all properties. Override this method and
 	// return NO for properties for which you don't want to provide default values

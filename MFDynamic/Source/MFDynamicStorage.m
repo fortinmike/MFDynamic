@@ -40,12 +40,12 @@
 
 #pragma mark Template Methods Implementation
 
-- (id)objectForKey:(NSString *)key
+- (id)rawObjectForKey:(NSString *)key
 {
 	return [_values objectForKey:key];
 }
 
-- (void)setObject:(id)object forKey:(NSString *)key
+- (void)setRawObject:(id)object forKey:(NSString *)key
 {
 	object ? [_values setObject:object forKey:key] : [_values removeObjectForKey:key];
 }
