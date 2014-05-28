@@ -90,7 +90,7 @@ By default, `MFDynamicDefaults` emits a warning when one of its dynamic properti
 
 ## MFDynamicStorage
 
-`MFDynamicStorage` works exactly like `MFDynamicDefault` but uses a simple dictionary as its backing store instead of `NSUserDefaults`. The main use case for `MFDynamicStorage` is a model class that must be stored to disk. Instead of using "normal" synthesized properties and implementing `NSCoding` manually (which can be very error-prone), you simply subclass `MFDynamicStorage` and use `@dynamic` properties.
+`MFDynamicStorage` works exactly like `MFDynamicDefault` but uses a simple dictionary as its backing store instead of `NSUserDefaults`. The main use case for `MFDynamicStorage` is a model class that must be stored to disk. Instead of using "normal" synthesized properties and implementing `NSCoding` manually (which can be very error-prone and is quite tedious), you simply subclass `MFDynamicStorage` and use `@dynamic` properties.
 
 ### Usage
 
@@ -136,7 +136,7 @@ By default, `MFDynamicDefaults` emits a warning when one of its dynamic properti
 
 ## Implementation Details
 
-- Almost all [Objective-C value types](https://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/ObjCRuntimeGuide/Articles/ocrtTypeEncodings.html#//apple_ref/doc/uid/TP40008048-CH100) are supported. An exception is thrown when a property is of an unsupported type.
+- Almost all [Objective-C value types](https://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/ObjCRuntimeGuide/Articles/ocrtTypeEncodings.html#//apple_ref/doc/uid/TP40008048-CH100) are supported. An exception is thrown when a property is of an unsupported type. Feel free to send a pull request if you find that a type you need is missing; support for additional types is exceedingly easy to implement.
 - Most property qualifiers (such as `assign`, `copy`, `weak` and `strong`) are ignored (which is why you don't see them used anywhere in the samples above). The only exception to this rule is `readonly`. If a property is declared as `readonly`, MFDynamicBase won't implement a setter for that property.
 
 
