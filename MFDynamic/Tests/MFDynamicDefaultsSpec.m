@@ -105,16 +105,12 @@ describe(@"MFDynamicDefaults", ^
 			
 #if TARGET_OS_IPHONE
 			UIImage *image = testImage();
-			[testDefaults setImageValue:image];
+			[testDefaults setUiImageValue:image];
 			
-			NSData *retrievedImageData = UIImagePNGRepresentation([testDefaults imageValue]);
+			NSData *retrievedImageData = UIImagePNGRepresentation([testDefaults uiImageValue]);
 			NSData *expectedImageData = UIImagePNGRepresentation(image);
 			
 			[[retrievedImageData should] equal:expectedImageData];
-			
-			UIColor *color = [UIColor redColor];
-			[testDefaults setColorValue:color];
-			[[[testDefaults colorValue] should] equal:color];
 #endif
 		});
 		
@@ -145,8 +141,8 @@ describe(@"MFDynamicDefaults", ^
 			[[[testDefaults dictionaryValue] should] beNil];
 			
 #if TARGET_OS_IPHONE
-			[[[testDefaults imageValue] should] beNil];
-			[[[testDefaults colorValue] should] beNil];
+			[[[testDefaults uiImageValue] should] beNil];
+			[[[testDefaults uiColorValue] should] beNil];
 #endif
 			
 			[[[testDefaults objectValue] should] beNil];

@@ -6,12 +6,6 @@
 //  Copyright (c) 2014 irradiated.net. All rights reserved.
 //
 
-#if TARGET_OS_IPHONE
-	#import <UIKit/UIKit.h>
-#else
-	#import <Cocoa/Cocoa.h>
-#endif
-
 #import "MFHumanReadableConverter.h"
 
 @implementation MFHumanReadableConverter

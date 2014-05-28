@@ -9,12 +9,6 @@
 //  https://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/ObjCRuntimeGuide/Articles/ocrtTypeEncodings.html#//apple_ref/doc/uid/TP40008048-CH100
 //
 
-#if TARGET_OS_IPHONE
-	#import <UIKit/UIKit.h>
-#else
-	#import <Cocoa/Cocoa.h>
-#endif
-
 #import <MARTNSObject.h>
 #import <RTMethod.h>
 #import <RTProperty.h>
@@ -126,7 +120,7 @@ static NSRegularExpression *_typeEncodingClassExtractionRegex;
 		{
 			return imp_implementationWithBlock(^(MFDynamicBase *iSelf)
 			{
-				return [MFHumanReadableConverter convertFromHumanReadable:[iSelf objectForKey:key] withTargetType:[UIColor class]];
+				return [MFHumanReadableConverter convertFromHumanReadable:[iSelf rawObjectForKey:key] withTargetType:[UIColor class]];
 			});
 		}
 #endif
@@ -205,7 +199,7 @@ static NSRegularExpression *_typeEncodingClassExtractionRegex;
 		{
 			return imp_implementationWithBlock(^(MFDynamicBase *iSelf, UIColor *color)
 			{
-				[iSelf setObject:[MFHumanReadableConverter convertToHumanReadable:color] forKey:key];
+				[iSelf setRawObject:[MFHumanReadableConverter convertToHumanReadable:color] forKey:key];
 			});
 		}
 #endif

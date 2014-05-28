@@ -15,6 +15,7 @@
 		4C1FDE5E1936151B00ACA448 /* MFDynamicDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE9ECD1933DA5600092F6A /* MFDynamicDefaults.m */; };
 		4C1FDE5F1936151B00ACA448 /* MFDynamicStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE9ECF1933DA5600092F6A /* MFDynamicStorage.m */; };
 		4C1FDE601936151B00ACA448 /* MFHumanReadableConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE9ED11933DA5600092F6A /* MFHumanReadableConverter.m */; };
+		4C38666D19361EBE00BF98B6 /* libMFDynamic.iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C1FDE39193613D700ACA448 /* libMFDynamic.iOS.a */; };
 		4C5BB18319145D25009CB21B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C59965719145A4900EFA82C /* Cocoa.framework */; };
 		4C5BB19319145D25009CB21B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C59966C19145A4900EFA82C /* XCTest.framework */; };
 		4C5BB19419145D25009CB21B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C59965719145A4900EFA82C /* Cocoa.framework */; };
@@ -137,6 +138,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C38666D19361EBE00BF98B6 /* libMFDynamic.iOS.a in Frameworks */,
 				4C1FDE48193613D800ACA448 /* XCTest.framework in Frameworks */,
 				4C1FDE49193613D800ACA448 /* Foundation.framework in Frameworks */,
 				F9387C974B57458BA1618AAB /* libPods-MFDynamic.iOS.Tests.a in Frameworks */,
@@ -659,7 +661,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E14607E0B75B4BAF80EB793A /* Pods-MFDynamic.iOS.Tests.xcconfig */;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MFDynamic.Mac.framework/Versions/A/MFDynamic.Mac";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -683,7 +684,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E14607E0B75B4BAF80EB793A /* Pods-MFDynamic.iOS.Tests.xcconfig */;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MFDynamic.Mac.framework/Versions/A/MFDynamic.Mac";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
