@@ -5,19 +5,7 @@
 //  Created by Michaël Fortin on 2013-08-22.
 //  Copyright (c) 2013 Michaël Fortin. All rights reserved.
 //
-//  Description: This is an abstract class meant to be subclassed and used instead of NSUserDefaults to
-//               store and retrieve values from the user defaults system. It provides access to user defaults
-//               through strongly typed, dynamically-implemented properties (as defined in your MFDynamicDefaults
-//               subclass) as opposed to key-based access and type-specific methods for each value type
-//               (such as -[NSUserDefaults boolForKey:]).
-//
-//               MFDynamicDefaults makes setting and retrieving values from the user defaults system type-safe,
-//               removes the need to remember or check in the plist file which exact type of value you're dealing with
-//               to find the appropriate type-specific accessor, removes the need to create constants for each
-//               user defaults key and expose those constants to your classes and/or hard-code strings where
-//               user defaults are accessed, makes accessing user defaults syntactically lighter and prevents you from
-//               forgetting to add default values to your registered defaults plist by emitting warnings for
-//               missing default values.
+
 //
 //  Usage:
 //               1- Subclass MFDynamicDefaults
@@ -69,6 +57,13 @@
 #import <Foundation/Foundation.h>
 #import "MFDynamicBase.h"
 
+/**
+ *  This is an abstract class meant to be subclassed and used instead of NSUserDefaults to
+ *  store and retrieve values from the user defaults system. It provides access to user defaults
+ *  through strongly typed, dynamically-implemented properties (as defined in your MFDynamicDefaults
+ *  subclass) as opposed to key-based access and type-specific methods for each value type
+ *  (such as -[NSUserDefaults boolForKey:]).
+ */
 @interface MFDynamicDefaults : MFDynamicBase
 {
 	@public
