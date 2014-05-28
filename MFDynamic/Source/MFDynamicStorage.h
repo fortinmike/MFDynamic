@@ -10,7 +10,7 @@
 
 @interface MFDynamicStorage : MFDynamicBase<NSCoding>
 
-- (BOOL)save:(NSString *)file;
-- (BOOL)load:(NSString *)file;
++ (instancetype)loadFromFile:(NSString *)file;
+- (BOOL)saveToFile:(NSString *)file;
 
 @end

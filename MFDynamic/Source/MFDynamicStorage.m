@@ -27,15 +27,20 @@
 
 #pragma mark Persistence
 
-- (BOOL)save:(NSString *)file
++ (instancetype)loadFromFile:(NSString *)file
 {
-	return [_values writeToFile:file atomically:YES];
+	NSDictionary *values = [NSMutableDictionary dictionaryWithContentsOfFile:file];
+	if (!values) return nil;
+	
+	MFDynamicStorage *instance = [[[self class] alloc] init];
+	instance->_values = [values mutableCopy];
+	
+	return instance;
 }
 
-- (BOOL)load:(NSString *)file
+- (BOOL)saveToFile:(NSString *)file
 {
-	_values = [NSMutableDictionary dictionaryWithContentsOfFile:file];
-	return (_values != nil);
+	return [_values writeToFile:file atomically:YES];
 }
 
 #pragma mark Template Methods Implementation
