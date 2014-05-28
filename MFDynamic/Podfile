@@ -1,24 +1,21 @@
-ios_version = '6.1'
-osx_version = '10.7'
+inhibit_all_warnings!
 
 target 'MFDynamic.iOS' do
-	platform :ios, ios_version
-	podspec :path => "../MFDynamic.podspec"
-end
-
-target 'MFDynamic.iOS.Tests' do
-	platform :ios, ios_version
-	pod 'Kiwi/XCTest', '~> 2.2.4'
+  platform :ios, '6.1'
+  podspec :path => '../MFDynamic.podspec'
 end
 
 target 'MFDynamic.Mac' do
-	platform :osx, osx_version
-	podspec :path => "../MFDynamic.podspec"
+  platform :osx, '10.7'
+  podspec :path => '../MFDynamic.podspec'
+end
+
+target 'MFDynamic.iOS.Tests' do
+  platform :ios, '6.1'
+  pod 'Kiwi/XCTest', '~> 2.2.4'
 end
 
 target 'MFDynamic.Mac.Tests' do
-	platform :osx, osx_version
-	pod 'Kiwi/XCTest', '~> 2.2.4'
+  platform :osx, '10.7'
+  pod 'Kiwi/XCTest', '~> 2.2.4'
 end
-
-inhibit_all_warnings!
