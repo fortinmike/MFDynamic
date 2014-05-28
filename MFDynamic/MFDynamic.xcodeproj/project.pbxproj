@@ -7,53 +7,53 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		070A56BE33E34A0EAFE5480A /* libPods-MFDynamic.Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 68214E7B330146CF89371C6D /* libPods-MFDynamic.Mac.a */; };
+		4C1FDE3B193613D700ACA448 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C1FDE3A193613D700ACA448 /* Foundation.framework */; };
+		4C1FDE48193613D800ACA448 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C59966C19145A4900EFA82C /* XCTest.framework */; };
+		4C1FDE49193613D800ACA448 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C1FDE3A193613D700ACA448 /* Foundation.framework */; };
+		4C1FDE5D1936151B00ACA448 /* MFDynamicBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE9ECB1933DA5600092F6A /* MFDynamicBase.m */; };
+		4C1FDE5E1936151B00ACA448 /* MFDynamicDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE9ECD1933DA5600092F6A /* MFDynamicDefaults.m */; };
+		4C1FDE5F1936151B00ACA448 /* MFDynamicStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE9ECF1933DA5600092F6A /* MFDynamicStorage.m */; };
+		4C1FDE601936151B00ACA448 /* MFHumanReadableConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE9ED11933DA5600092F6A /* MFHumanReadableConverter.m */; };
 		4C5BB18319145D25009CB21B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C59965719145A4900EFA82C /* Cocoa.framework */; };
 		4C5BB19319145D25009CB21B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C59966C19145A4900EFA82C /* XCTest.framework */; };
 		4C5BB19419145D25009CB21B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C59965719145A4900EFA82C /* Cocoa.framework */; };
 		4C5BB19719145D25009CB21B /* MFDynamic.Mac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C5BB18219145D24009CB21B /* MFDynamic.Mac.framework */; };
-		4CC18D2419145C6400CEECEC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C59965719145A4900EFA82C /* Cocoa.framework */; };
-		4CC18D3019145C6400CEECEC /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C59966C19145A4900EFA82C /* XCTest.framework */; };
-		4CC18D3119145C6400CEECEC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C59965719145A4900EFA82C /* Cocoa.framework */; };
-		4CC18D3419145C6400CEECEC /* MFDynamic.iOS.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CC18D2319145C6400CEECEC /* MFDynamic.iOS.dylib */; };
-		4CC18D4719145C9B00CEECEC /* MFDynamic-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 4CC18D4419145C9B00CEECEC /* MFDynamic-Prefix.pch */; };
-		4CDD635119232E7800936B49 /* MFDynamic.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CDD635019232E7800936B49 /* MFDynamic.h */; };
+		4CC93CAD1936191A00473ABB /* MFDynamicDefaultsSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE9EE21933E2C100092F6A /* MFDynamicDefaultsSpec.m */; };
+		4CC93CAE1936191A00473ABB /* MFDynamicStorageSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE9EE31933E2C100092F6A /* MFDynamicStorageSpec.m */; };
+		4CC93CAF1936191A00473ABB /* MFNSCodingImplementer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE9EF71933F2E000092F6A /* MFNSCodingImplementer.m */; };
+		4CC93CB01936191A00473ABB /* MFTestDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE9EF91933F2E000092F6A /* MFTestDefaults.m */; };
+		4CC93CB11936191A00473ABB /* MFTestStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE9EFB1933F2E000092F6A /* MFTestStorage.m */; };
+		4CC93CB21936191A00473ABB /* MFTestUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE9EFD1933F2E000092F6A /* MFTestUserDefaults.m */; };
+		4CC93CB31936193500473ABB /* MFDynamicDefaultsSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE9EE21933E2C100092F6A /* MFDynamicDefaultsSpec.m */; };
+		4CC93CB41936193500473ABB /* MFDynamicStorageSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE9EE31933E2C100092F6A /* MFDynamicStorageSpec.m */; };
+		4CC93CB51936193500473ABB /* MFNSCodingImplementer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE9EF71933F2E000092F6A /* MFNSCodingImplementer.m */; };
+		4CC93CB61936193500473ABB /* MFTestDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE9EF91933F2E000092F6A /* MFTestDefaults.m */; };
+		4CC93CB71936193500473ABB /* MFTestStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE9EFB1933F2E000092F6A /* MFTestStorage.m */; };
+		4CC93CB81936193500473ABB /* MFTestUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE9EFD1933F2E000092F6A /* MFTestUserDefaults.m */; };
 		4CDD635219232E7800936B49 /* MFDynamic.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CDD635019232E7800936B49 /* MFDynamic.h */; };
 		4CECFCF319145E540022AA2A /* MFDynamic-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 4CC18D4419145C9B00CEECEC /* MFDynamic-Prefix.pch */; };
-		4CEE9ED21933DA5600092F6A /* MFDynamicBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CEE9ECA1933DA5600092F6A /* MFDynamicBase.h */; };
 		4CEE9ED31933DA5600092F6A /* MFDynamicBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CEE9ECA1933DA5600092F6A /* MFDynamicBase.h */; };
-		4CEE9ED41933DA5600092F6A /* MFDynamicBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE9ECB1933DA5600092F6A /* MFDynamicBase.m */; };
 		4CEE9ED51933DA5600092F6A /* MFDynamicBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE9ECB1933DA5600092F6A /* MFDynamicBase.m */; };
-		4CEE9ED61933DA5600092F6A /* MFDynamicDefaults.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CEE9ECC1933DA5600092F6A /* MFDynamicDefaults.h */; };
 		4CEE9ED71933DA5600092F6A /* MFDynamicDefaults.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CEE9ECC1933DA5600092F6A /* MFDynamicDefaults.h */; };
-		4CEE9ED81933DA5600092F6A /* MFDynamicDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE9ECD1933DA5600092F6A /* MFDynamicDefaults.m */; };
 		4CEE9ED91933DA5600092F6A /* MFDynamicDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE9ECD1933DA5600092F6A /* MFDynamicDefaults.m */; };
-		4CEE9EDA1933DA5600092F6A /* MFDynamicStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CEE9ECE1933DA5600092F6A /* MFDynamicStorage.h */; };
 		4CEE9EDB1933DA5600092F6A /* MFDynamicStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CEE9ECE1933DA5600092F6A /* MFDynamicStorage.h */; };
-		4CEE9EDC1933DA5600092F6A /* MFDynamicStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE9ECF1933DA5600092F6A /* MFDynamicStorage.m */; };
 		4CEE9EDD1933DA5600092F6A /* MFDynamicStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE9ECF1933DA5600092F6A /* MFDynamicStorage.m */; };
-		4CEE9EDE1933DA5600092F6A /* MFHumanReadableConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CEE9ED01933DA5600092F6A /* MFHumanReadableConverter.h */; };
 		4CEE9EDF1933DA5600092F6A /* MFHumanReadableConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CEE9ED01933DA5600092F6A /* MFHumanReadableConverter.h */; };
-		4CEE9EE01933DA5600092F6A /* MFHumanReadableConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE9ED11933DA5600092F6A /* MFHumanReadableConverter.m */; };
 		4CEE9EE11933DA5600092F6A /* MFHumanReadableConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE9ED11933DA5600092F6A /* MFHumanReadableConverter.m */; };
-		4CEE9EE81933E2C100092F6A /* MFDynamicDefaultsSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE9EE21933E2C100092F6A /* MFDynamicDefaultsSpec.m */; };
-		4CEE9EE91933E2C100092F6A /* MFDynamicDefaultsSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE9EE21933E2C100092F6A /* MFDynamicDefaultsSpec.m */; };
-		4CEE9EEA1933E2C100092F6A /* MFDynamicStorageSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE9EE31933E2C100092F6A /* MFDynamicStorageSpec.m */; };
-		4CEE9EEB1933E2C100092F6A /* MFDynamicStorageSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE9EE31933E2C100092F6A /* MFDynamicStorageSpec.m */; };
-		4CEE9EFE1933F2E000092F6A /* MFNSCodingImplementer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE9EF71933F2E000092F6A /* MFNSCodingImplementer.m */; };
-		4CEE9EFF1933F2E000092F6A /* MFNSCodingImplementer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE9EF71933F2E000092F6A /* MFNSCodingImplementer.m */; };
-		4CEE9F001933F2E000092F6A /* MFTestDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE9EF91933F2E000092F6A /* MFTestDefaults.m */; };
-		4CEE9F011933F2E000092F6A /* MFTestDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE9EF91933F2E000092F6A /* MFTestDefaults.m */; };
-		4CEE9F021933F2E000092F6A /* MFTestStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE9EFB1933F2E000092F6A /* MFTestStorage.m */; };
-		4CEE9F031933F2E000092F6A /* MFTestStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE9EFB1933F2E000092F6A /* MFTestStorage.m */; };
-		4CEE9F041933F2E000092F6A /* MFTestUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE9EFD1933F2E000092F6A /* MFTestUserDefaults.m */; };
-		4CEE9F051933F2E000092F6A /* MFTestUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE9EFD1933F2E000092F6A /* MFTestUserDefaults.m */; };
-		77A5CEDC863C43E087A7947A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F08C97F96A34A0F8AE9D657 /* libPods.a */; };
-		AE4B39FA553B48B2B35A0F47 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F08C97F96A34A0F8AE9D657 /* libPods.a */; };
-		B9DC419F83E042C98E4F6929 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F08C97F96A34A0F8AE9D657 /* libPods.a */; };
-		D88E53385B1641678E62DA0B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F08C97F96A34A0F8AE9D657 /* libPods.a */; };
+		996F8E871D284957871F1B7B /* libPods-MFDynamic.iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EFBEEB8F4DED45ACB66C909A /* libPods-MFDynamic.iOS.a */; };
+		F9387C974B57458BA1618AAB /* libPods-MFDynamic.iOS.Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5982F2B4839549A98C81960B /* libPods-MFDynamic.iOS.Tests.a */; };
+		FB14B372F8FE459BA2E14AB0 /* libPods-MFDynamic.Mac.Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CFAFBBF9E04145C7BFD9B526 /* libPods-MFDynamic.Mac.Tests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		4C1FDE4C193613D800ACA448 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C59964B19145A4900EFA82C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4C1FDE38193613D700ACA448;
+			remoteInfo = MFDynamic.iOS;
+		};
 		4C5BB19519145D25009CB21B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4C59964B19145A4900EFA82C /* Project object */;
@@ -61,18 +61,27 @@
 			remoteGlobalIDString = 4C5BB18119145D24009CB21B;
 			remoteInfo = MFDynamic.Mac;
 		};
-		4CC18D3219145C6400CEECEC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4C59964B19145A4900EFA82C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4CC18D2219145C6400CEECEC;
-			remoteInfo = MFDynamic.iOS;
-		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		4C1FDE37193613D700ACA448 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		38990A9BF186483784019B54 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		3F08C97F96A34A0F8AE9D657 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C1FDE39193613D700ACA448 /* libMFDynamic.iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMFDynamic.iOS.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C1FDE3A193613D700ACA448 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4C1FDE47193613D800ACA448 /* MFDynamic.iOS.Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MFDynamic.iOS.Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C1FDE4A193613D800ACA448 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		4C1FDE661936162700ACA448 /* MFDynamic-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "MFDynamic-Info.plist"; path = "Source/MFDynamic-Info.plist"; sourceTree = "<group>"; };
 		4C59965719145A4900EFA82C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		4C59965A19145A4900EFA82C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4C59965B19145A4900EFA82C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -81,10 +90,7 @@
 		4C5BB18219145D24009CB21B /* MFDynamic.Mac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MFDynamic.Mac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C5BB19219145D25009CB21B /* MFDynamic.Mac.Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MFDynamic.Mac.Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C6128DE192AA53A00FD380B /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = text; name = CHANGELOG.md; path = ../CHANGELOG.md; sourceTree = "<group>"; };
-		4CC18D2319145C6400CEECEC /* MFDynamic.iOS.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = MFDynamic.iOS.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
-		4CC18D2F19145C6400CEECEC /* MFDynamic.iOS.Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MFDynamic.iOS.Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CC18D4419145C9B00CEECEC /* MFDynamic-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MFDynamic-Prefix.pch"; path = "Source/MFDynamic-Prefix.pch"; sourceTree = "<group>"; };
-		4CC18D4519145C9B00CEECEC /* MFDynamic.Mac-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "MFDynamic.Mac-Info.plist"; path = "Source/MFDynamic.Mac-Info.plist"; sourceTree = "<group>"; };
 		4CC18D4A19145CA300CEECEC /* MFDynamicTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "MFDynamicTests-Info.plist"; path = "Tests/MFDynamicTests-Info.plist"; sourceTree = "<group>"; };
 		4CC252DC191C1E7300E49DF7 /* MFDynamic.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; lineEnding = 0; name = MFDynamic.podspec; path = ../MFDynamic.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		4CC252DD191C1E7300E49DF7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -107,15 +113,42 @@
 		4CEE9EFB1933F2E000092F6A /* MFTestStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFTestStorage.m; sourceTree = "<group>"; };
 		4CEE9EFC1933F2E000092F6A /* MFTestUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFTestUserDefaults.h; sourceTree = "<group>"; };
 		4CEE9EFD1933F2E000092F6A /* MFTestUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFTestUserDefaults.m; sourceTree = "<group>"; };
+		5982F2B4839549A98C81960B /* libPods-MFDynamic.iOS.Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MFDynamic.iOS.Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		63A5509C658A4CDB9349EC58 /* Pods-MFDynamic.iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MFDynamic.iOS.xcconfig"; path = "Pods/Pods-MFDynamic.iOS.xcconfig"; sourceTree = "<group>"; };
+		64723D8815854C929870C1D1 /* Pods-MFDynamic.Mac.Tests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MFDynamic.Mac.Tests.xcconfig"; path = "Pods/Pods-MFDynamic.Mac.Tests.xcconfig"; sourceTree = "<group>"; };
+		68214E7B330146CF89371C6D /* libPods-MFDynamic.Mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MFDynamic.Mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1ED1292810742C2BB9D1E9E /* Pods-MFDynamic.Mac.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MFDynamic.Mac.xcconfig"; path = "Pods/Pods-MFDynamic.Mac.xcconfig"; sourceTree = "<group>"; };
+		CFAFBBF9E04145C7BFD9B526 /* libPods-MFDynamic.Mac.Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MFDynamic.Mac.Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E14607E0B75B4BAF80EB793A /* Pods-MFDynamic.iOS.Tests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MFDynamic.iOS.Tests.xcconfig"; path = "Pods/Pods-MFDynamic.iOS.Tests.xcconfig"; sourceTree = "<group>"; };
+		EFBEEB8F4DED45ACB66C909A /* libPods-MFDynamic.iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MFDynamic.iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4C1FDE36193613D700ACA448 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C1FDE3B193613D700ACA448 /* Foundation.framework in Frameworks */,
+				996F8E871D284957871F1B7B /* libPods-MFDynamic.iOS.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C1FDE44193613D700ACA448 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C1FDE48193613D800ACA448 /* XCTest.framework in Frameworks */,
+				4C1FDE49193613D800ACA448 /* Foundation.framework in Frameworks */,
+				F9387C974B57458BA1618AAB /* libPods-MFDynamic.iOS.Tests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4C5BB17E19145D24009CB21B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				4C5BB18319145D25009CB21B /* Cocoa.framework in Frameworks */,
-				AE4B39FA553B48B2B35A0F47 /* libPods.a in Frameworks */,
+				070A56BE33E34A0EAFE5480A /* libPods-MFDynamic.Mac.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,27 +159,7 @@
 				4C5BB19719145D25009CB21B /* MFDynamic.Mac.framework in Frameworks */,
 				4C5BB19419145D25009CB21B /* Cocoa.framework in Frameworks */,
 				4C5BB19319145D25009CB21B /* XCTest.framework in Frameworks */,
-				B9DC419F83E042C98E4F6929 /* libPods.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4CC18D2019145C6400CEECEC /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4CC18D2419145C6400CEECEC /* Cocoa.framework in Frameworks */,
-				77A5CEDC863C43E087A7947A /* libPods.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4CC18D2C19145C6400CEECEC /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4CC18D3119145C6400CEECEC /* Cocoa.framework in Frameworks */,
-				4CC18D3419145C6400CEECEC /* MFDynamic.iOS.dylib in Frameworks */,
-				4CC18D3019145C6400CEECEC /* XCTest.framework in Frameworks */,
-				D88E53385B1641678E62DA0B /* libPods.a in Frameworks */,
+				FB14B372F8FE459BA2E14AB0 /* libPods-MFDynamic.Mac.Tests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,17 +174,20 @@
 				4C59965619145A4900EFA82C /* Frameworks */,
 				4C59965519145A4900EFA82C /* Products */,
 				4CC252DB191C1E5D00E49DF7 /* Supporting Files */,
-				38990A9BF186483784019B54 /* Pods.xcconfig */,
+				A1ED1292810742C2BB9D1E9E /* Pods-MFDynamic.Mac.xcconfig */,
+				64723D8815854C929870C1D1 /* Pods-MFDynamic.Mac.Tests.xcconfig */,
+				63A5509C658A4CDB9349EC58 /* Pods-MFDynamic.iOS.xcconfig */,
+				E14607E0B75B4BAF80EB793A /* Pods-MFDynamic.iOS.Tests.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
 		4C59965519145A4900EFA82C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4CC18D2319145C6400CEECEC /* MFDynamic.iOS.dylib */,
-				4CC18D2F19145C6400CEECEC /* MFDynamic.iOS.Tests.xctest */,
 				4C5BB18219145D24009CB21B /* MFDynamic.Mac.framework */,
 				4C5BB19219145D25009CB21B /* MFDynamic.Mac.Tests.xctest */,
+				4C1FDE39193613D700ACA448 /* libMFDynamic.iOS.a */,
+				4C1FDE47193613D800ACA448 /* MFDynamic.iOS.Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -181,8 +197,14 @@
 			children = (
 				4C59965719145A4900EFA82C /* Cocoa.framework */,
 				4C59966C19145A4900EFA82C /* XCTest.framework */,
+				4C1FDE3A193613D700ACA448 /* Foundation.framework */,
+				4C1FDE4A193613D800ACA448 /* UIKit.framework */,
 				4C59965919145A4900EFA82C /* Other Frameworks */,
 				3F08C97F96A34A0F8AE9D657 /* libPods.a */,
+				68214E7B330146CF89371C6D /* libPods-MFDynamic.Mac.a */,
+				CFAFBBF9E04145C7BFD9B526 /* libPods-MFDynamic.Mac.Tests.a */,
+				EFBEEB8F4DED45ACB66C909A /* libPods-MFDynamic.iOS.a */,
+				5982F2B4839549A98C81960B /* libPods-MFDynamic.iOS.Tests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -227,8 +249,8 @@
 			isa = PBXGroup;
 			children = (
 				4C6128DE192AA53A00FD380B /* CHANGELOG.md */,
+				4C1FDE661936162700ACA448 /* MFDynamic-Info.plist */,
 				4CC18D4419145C9B00CEECEC /* MFDynamic-Prefix.pch */,
-				4CC18D4519145C9B00CEECEC /* MFDynamic.Mac-Info.plist */,
 				4CC252DC191C1E7300E49DF7 /* MFDynamic.podspec */,
 				4CC18D4A19145CA300CEECEC /* MFDynamicTests-Info.plist */,
 				4CC252DD191C1E7300E49DF7 /* README.md */,
@@ -267,32 +289,58 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4CC18D2119145C6400CEECEC /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4CEE9ED21933DA5600092F6A /* MFDynamicBase.h in Headers */,
-				4CEE9ED61933DA5600092F6A /* MFDynamicDefaults.h in Headers */,
-				4CEE9EDE1933DA5600092F6A /* MFHumanReadableConverter.h in Headers */,
-				4CC18D4719145C9B00CEECEC /* MFDynamic-Prefix.pch in Headers */,
-				4CDD635119232E7800936B49 /* MFDynamic.h in Headers */,
-				4CEE9EDA1933DA5600092F6A /* MFDynamicStorage.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		4C1FDE38193613D700ACA448 /* MFDynamic.iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C1FDE57193613D800ACA448 /* Build configuration list for PBXNativeTarget "MFDynamic.iOS" */;
+			buildPhases = (
+				23F22AE66B4C4B408000B8CB /* Check Pods Manifest.lock */,
+				4C1FDE35193613D700ACA448 /* Sources */,
+				4C1FDE36193613D700ACA448 /* Frameworks */,
+				4C1FDE37193613D700ACA448 /* CopyFiles */,
+				0E5FF7AF1E7A4B48BAF6E71B /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MFDynamic.iOS;
+			productName = MFDynamic.iOS;
+			productReference = 4C1FDE39193613D700ACA448 /* libMFDynamic.iOS.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		4C1FDE46193613D700ACA448 /* MFDynamic.iOS.Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C1FDE5A193613D800ACA448 /* Build configuration list for PBXNativeTarget "MFDynamic.iOS.Tests" */;
+			buildPhases = (
+				988B302C21DB45FF876BA09E /* Check Pods Manifest.lock */,
+				4C1FDE43193613D700ACA448 /* Sources */,
+				4C1FDE44193613D700ACA448 /* Frameworks */,
+				4C1FDE45193613D700ACA448 /* Resources */,
+				D557F1A8074749729ED6DE6E /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4C1FDE4D193613D800ACA448 /* PBXTargetDependency */,
+			);
+			name = MFDynamic.iOS.Tests;
+			productName = MFDynamic.iOSTests;
+			productReference = 4C1FDE47193613D800ACA448 /* MFDynamic.iOS.Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		4C5BB18119145D24009CB21B /* MFDynamic.Mac */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4C5BB1A019145D25009CB21B /* Build configuration list for PBXNativeTarget "MFDynamic.Mac" */;
 			buildPhases = (
-				02C4FFE30FCA40E4AE427546 /* Check Pods Manifest.lock */,
+				3DAB4A22F0374FA4BFB199B1 /* Check Pods Manifest.lock */,
 				4C5BB17D19145D24009CB21B /* Sources */,
 				4C5BB17E19145D24009CB21B /* Frameworks */,
 				4C5BB17F19145D24009CB21B /* Headers */,
 				4C5BB18019145D24009CB21B /* Resources */,
-				5936817F68EB443FA4F105D0 /* Copy Pods Resources */,
+				0C557FB95DB64D03A1C1BB0F /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -307,11 +355,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4C5BB1A319145D25009CB21B /* Build configuration list for PBXNativeTarget "MFDynamic.Mac.Tests" */;
 			buildPhases = (
-				B8F8C71AE25042B8B08FF5C2 /* Check Pods Manifest.lock */,
+				458E186221114C999DB1152D /* Check Pods Manifest.lock */,
 				4C5BB18E19145D25009CB21B /* Sources */,
 				4C5BB18F19145D25009CB21B /* Frameworks */,
 				4C5BB19019145D25009CB21B /* Resources */,
-				A96DF2805EA5499CB3C764B6 /* Copy Pods Resources */,
+				CEE9CADDDF66497FB7C89925 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -323,45 +371,6 @@
 			productReference = 4C5BB19219145D25009CB21B /* MFDynamic.Mac.Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		4CC18D2219145C6400CEECEC /* MFDynamic.iOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4CC18D3D19145C6400CEECEC /* Build configuration list for PBXNativeTarget "MFDynamic.iOS" */;
-			buildPhases = (
-				F40A7A054D0C4CA48AF77CF5 /* Check Pods Manifest.lock */,
-				4CC18D1F19145C6400CEECEC /* Sources */,
-				4CC18D2019145C6400CEECEC /* Frameworks */,
-				4CC18D2119145C6400CEECEC /* Headers */,
-				0C2DEE17C7AC48A180A512ED /* Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = MFDynamic.iOS;
-			productName = MFDynamic.iOS;
-			productReference = 4CC18D2319145C6400CEECEC /* MFDynamic.iOS.dylib */;
-			productType = "com.apple.product-type.library.dynamic";
-		};
-		4CC18D2E19145C6400CEECEC /* MFDynamic.iOS.Tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4CC18D4019145C6400CEECEC /* Build configuration list for PBXNativeTarget "MFDynamic.iOS.Tests" */;
-			buildPhases = (
-				2831C023833445B6945D7BE8 /* Check Pods Manifest.lock */,
-				4CC18D2B19145C6400CEECEC /* Sources */,
-				4CC18D2C19145C6400CEECEC /* Frameworks */,
-				4CC18D2D19145C6400CEECEC /* Resources */,
-				7A6F756BB7B944A1B8680F7E /* Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4CC18D3319145C6400CEECEC /* PBXTargetDependency */,
-			);
-			name = MFDynamic.iOS.Tests;
-			productName = MFDynamic.iOSTests;
-			productReference = 4CC18D2F19145C6400CEECEC /* MFDynamic.iOS.Tests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -371,11 +380,11 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Michaël Fortin";
 				TargetAttributes = {
-					4C5BB19119145D25009CB21B = {
-						TestTargetID = 4CC18D2219145C6400CEECEC;
+					4C1FDE46193613D700ACA448 = {
+						TestTargetID = 4C5BB18119145D24009CB21B;
 					};
-					4CC18D2E19145C6400CEECEC = {
-						TestTargetID = 4CC18D2219145C6400CEECEC;
+					4C5BB19119145D25009CB21B = {
+						TestTargetID = 4C5BB18119145D24009CB21B;
 					};
 				};
 			};
@@ -391,8 +400,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4CC18D2219145C6400CEECEC /* MFDynamic.iOS */,
-				4CC18D2E19145C6400CEECEC /* MFDynamic.iOS.Tests */,
+				4C1FDE38193613D700ACA448 /* MFDynamic.iOS */,
+				4C1FDE46193613D700ACA448 /* MFDynamic.iOS.Tests */,
 				4C5BB18119145D24009CB21B /* MFDynamic.Mac */,
 				4C5BB19119145D25009CB21B /* MFDynamic.Mac.Tests */,
 			);
@@ -400,6 +409,13 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		4C1FDE45193613D700ACA448 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4C5BB18019145D24009CB21B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -414,17 +430,40 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4CC18D2D19145C6400CEECEC /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		02C4FFE30FCA40E4AE427546 /* Check Pods Manifest.lock */ = {
+		0C557FB95DB64D03A1C1BB0F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-MFDynamic.Mac-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0E5FF7AF1E7A4B48BAF6E71B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-MFDynamic.iOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		23F22AE66B4C4B408000B8CB /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -439,22 +478,7 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		0C2DEE17C7AC48A180A512ED /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2831C023833445B6945D7BE8 /* Check Pods Manifest.lock */ = {
+		3DAB4A22F0374FA4BFB199B1 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -469,52 +493,7 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		5936817F68EB443FA4F105D0 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7A6F756BB7B944A1B8680F7E /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A96DF2805EA5499CB3C764B6 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B8F8C71AE25042B8B08FF5C2 /* Check Pods Manifest.lock */ = {
+		458E186221114C999DB1152D /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -529,7 +508,7 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		F40A7A054D0C4CA48AF77CF5 /* Check Pods Manifest.lock */ = {
+		988B302C21DB45FF876BA09E /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -542,19 +521,73 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CEE9CADDDF66497FB7C89925 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-MFDynamic.Mac.Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D557F1A8074749729ED6DE6E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-MFDynamic.iOS.Tests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4C1FDE35193613D700ACA448 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C1FDE5D1936151B00ACA448 /* MFDynamicBase.m in Sources */,
+				4C1FDE5E1936151B00ACA448 /* MFDynamicDefaults.m in Sources */,
+				4C1FDE5F1936151B00ACA448 /* MFDynamicStorage.m in Sources */,
+				4C1FDE601936151B00ACA448 /* MFHumanReadableConverter.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C1FDE43193613D700ACA448 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CC93CAD1936191A00473ABB /* MFDynamicDefaultsSpec.m in Sources */,
+				4CC93CAE1936191A00473ABB /* MFDynamicStorageSpec.m in Sources */,
+				4CC93CAF1936191A00473ABB /* MFNSCodingImplementer.m in Sources */,
+				4CC93CB01936191A00473ABB /* MFTestDefaults.m in Sources */,
+				4CC93CB11936191A00473ABB /* MFTestStorage.m in Sources */,
+				4CC93CB21936191A00473ABB /* MFTestUserDefaults.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4C5BB17D19145D24009CB21B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CEE9ED91933DA5600092F6A /* MFDynamicDefaults.m in Sources */,
-				4CEE9EE11933DA5600092F6A /* MFHumanReadableConverter.m in Sources */,
 				4CEE9ED51933DA5600092F6A /* MFDynamicBase.m in Sources */,
+				4CEE9ED91933DA5600092F6A /* MFDynamicDefaults.m in Sources */,
 				4CEE9EDD1933DA5600092F6A /* MFDynamicStorage.m in Sources */,
+				4CEE9EE11933DA5600092F6A /* MFHumanReadableConverter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -562,55 +595,111 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CEE9EFF1933F2E000092F6A /* MFNSCodingImplementer.m in Sources */,
-				4CEE9F051933F2E000092F6A /* MFTestUserDefaults.m in Sources */,
-				4CEE9EE91933E2C100092F6A /* MFDynamicDefaultsSpec.m in Sources */,
-				4CEE9F011933F2E000092F6A /* MFTestDefaults.m in Sources */,
-				4CEE9F031933F2E000092F6A /* MFTestStorage.m in Sources */,
-				4CEE9EEB1933E2C100092F6A /* MFDynamicStorageSpec.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4CC18D1F19145C6400CEECEC /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4CEE9ED81933DA5600092F6A /* MFDynamicDefaults.m in Sources */,
-				4CEE9EE01933DA5600092F6A /* MFHumanReadableConverter.m in Sources */,
-				4CEE9ED41933DA5600092F6A /* MFDynamicBase.m in Sources */,
-				4CEE9EDC1933DA5600092F6A /* MFDynamicStorage.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4CC18D2B19145C6400CEECEC /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4CEE9EFE1933F2E000092F6A /* MFNSCodingImplementer.m in Sources */,
-				4CEE9F041933F2E000092F6A /* MFTestUserDefaults.m in Sources */,
-				4CEE9EE81933E2C100092F6A /* MFDynamicDefaultsSpec.m in Sources */,
-				4CEE9F001933F2E000092F6A /* MFTestDefaults.m in Sources */,
-				4CEE9F021933F2E000092F6A /* MFTestStorage.m in Sources */,
-				4CEE9EEA1933E2C100092F6A /* MFDynamicStorageSpec.m in Sources */,
+				4CC93CB31936193500473ABB /* MFDynamicDefaultsSpec.m in Sources */,
+				4CC93CB41936193500473ABB /* MFDynamicStorageSpec.m in Sources */,
+				4CC93CB51936193500473ABB /* MFNSCodingImplementer.m in Sources */,
+				4CC93CB61936193500473ABB /* MFTestDefaults.m in Sources */,
+				4CC93CB71936193500473ABB /* MFTestStorage.m in Sources */,
+				4CC93CB81936193500473ABB /* MFTestUserDefaults.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		4C1FDE4D193613D800ACA448 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4C1FDE38193613D700ACA448 /* MFDynamic.iOS */;
+			targetProxy = 4C1FDE4C193613D800ACA448 /* PBXContainerItemProxy */;
+		};
 		4C5BB19619145D25009CB21B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 4C5BB18119145D24009CB21B /* MFDynamic.Mac */;
 			targetProxy = 4C5BB19519145D25009CB21B /* PBXContainerItemProxy */;
 		};
-		4CC18D3319145C6400CEECEC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4CC18D2219145C6400CEECEC /* MFDynamic.iOS */;
-			targetProxy = 4CC18D3219145C6400CEECEC /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		4C1FDE58193613D800ACA448 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 63A5509C658A4CDB9349EC58 /* Pods-MFDynamic.iOS.xcconfig */;
+			buildSettings = {
+				DSTROOT = /tmp/MFDynamic_iOS.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Source/MFDynamic-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Source/MFDynamic-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		4C1FDE59193613D800ACA448 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 63A5509C658A4CDB9349EC58 /* Pods-MFDynamic.iOS.xcconfig */;
+			buildSettings = {
+				DSTROOT = /tmp/MFDynamic_iOS.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Source/MFDynamic-Prefix.pch";
+				INFOPLIST_FILE = "Source/MFDynamic-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4C1FDE5B193613D800ACA448 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E14607E0B75B4BAF80EB793A /* Pods-MFDynamic.iOS.Tests.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MFDynamic.Mac.framework/Versions/A/MFDynamic.Mac";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Tests/MFDynamicTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		4C1FDE5C193613D800ACA448 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E14607E0B75B4BAF80EB793A /* Pods-MFDynamic.iOS.Tests.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MFDynamic.Mac.framework/Versions/A/MFDynamic.Mac";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				INFOPLIST_FILE = "Tests/MFDynamicTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
 		4C59967A19145A4900EFA82C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -645,9 +734,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
 				WARNING_CFLAGS = "-Wno-undeclared-selector";
 			};
 			name = Debug;
@@ -679,15 +766,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				SDKROOT = macosx;
 				WARNING_CFLAGS = "-Wno-undeclared-selector";
 			};
 			name = Release;
 		};
 		4C5BB1A119145D25009CB21B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 38990A9BF186483784019B54 /* Pods.xcconfig */;
+			baseConfigurationReference = A1ED1292810742C2BB9D1E9E /* Pods-MFDynamic.Mac.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -699,7 +784,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "Source/MFDynamic.Mac-Info.plist";
+				INFOPLIST_FILE = "Source/MFDynamic-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = framework;
 			};
@@ -707,7 +793,7 @@
 		};
 		4C5BB1A219145D25009CB21B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 38990A9BF186483784019B54 /* Pods.xcconfig */;
+			baseConfigurationReference = A1ED1292810742C2BB9D1E9E /* Pods-MFDynamic.Mac.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -715,7 +801,8 @@
 				FRAMEWORK_VERSION = A;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Source/MFDynamic-Prefix.pch";
-				INFOPLIST_FILE = "Source/MFDynamic.Mac-Info.plist";
+				INFOPLIST_FILE = "Source/MFDynamic-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = framework;
 			};
@@ -723,9 +810,9 @@
 		};
 		4C5BB1A419145D25009CB21B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 38990A9BF186483784019B54 /* Pods.xcconfig */;
+			baseConfigurationReference = 64723D8815854C929870C1D1 /* Pods-MFDynamic.Mac.Tests.xcconfig */;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MFDynamic.iOS.dylib";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MFDynamic.Mac.framework/Versions/A/MFDynamic.Mac";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
@@ -737,6 +824,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "Tests/MFDynamicTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -745,9 +833,9 @@
 		};
 		4C5BB1A519145D25009CB21B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 38990A9BF186483784019B54 /* Pods.xcconfig */;
+			baseConfigurationReference = 64723D8815854C929870C1D1 /* Pods-MFDynamic.Mac.Tests.xcconfig */;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MFDynamic.iOS.dylib";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MFDynamic.Mac.framework/Versions/A/MFDynamic.Mac";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
@@ -755,74 +843,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = "Tests/MFDynamicTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
-		4CC18D3E19145C6400CEECEC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 38990A9BF186483784019B54 /* Pods.xcconfig */;
-			buildSettings = {
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Source/MFDynamic-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		4CC18D3F19145C6400CEECEC /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 38990A9BF186483784019B54 /* Pods.xcconfig */;
-			buildSettings = {
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Source/MFDynamic-Prefix.pch";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		4CC18D4119145C6400CEECEC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 38990A9BF186483784019B54 /* Pods.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MFDynamic.iOS.dylib";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "Tests/MFDynamicTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		4CC18D4219145C6400CEECEC /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 38990A9BF186483784019B54 /* Pods.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MFDynamic.iOS.dylib";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				INFOPLIST_FILE = "Tests/MFDynamicTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -832,6 +853,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4C1FDE57193613D800ACA448 /* Build configuration list for PBXNativeTarget "MFDynamic.iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C1FDE58193613D800ACA448 /* Debug */,
+				4C1FDE59193613D800ACA448 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4C1FDE5A193613D800ACA448 /* Build configuration list for PBXNativeTarget "MFDynamic.iOS.Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C1FDE5B193613D800ACA448 /* Debug */,
+				4C1FDE5C193613D800ACA448 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4C59964E19145A4900EFA82C /* Build configuration list for PBXProject "MFDynamic" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -855,24 +894,6 @@
 			buildConfigurations = (
 				4C5BB1A419145D25009CB21B /* Debug */,
 				4C5BB1A519145D25009CB21B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4CC18D3D19145C6400CEECEC /* Build configuration list for PBXNativeTarget "MFDynamic.iOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4CC18D3E19145C6400CEECEC /* Debug */,
-				4CC18D3F19145C6400CEECEC /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4CC18D4019145C6400CEECEC /* Build configuration list for PBXNativeTarget "MFDynamic.iOS.Tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4CC18D4119145C6400CEECEC /* Debug */,
-				4CC18D4219145C6400CEECEC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

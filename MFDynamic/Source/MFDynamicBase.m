@@ -9,6 +9,12 @@
 //  https://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/ObjCRuntimeGuide/Articles/ocrtTypeEncodings.html#//apple_ref/doc/uid/TP40008048-CH100
 //
 
+#if TARGET_OS_IPHONE
+	#import <UIKit/UIKit.h>
+#else
+	#import <Cocoa/Cocoa.h>
+#endif
+
 #import <MARTNSObject.h>
 #import <RTMethod.h>
 #import <RTProperty.h>
@@ -310,7 +316,7 @@ static NSRegularExpression *_typeEncodingClassExtractionRegex;
 
 - (void)loadValues:(NSDictionary *)values emitMissingValueWarnings:(BOOL)emitWarnings
 {
-	// Load values using the setObject:forKey: template method
+	// Load values using the setRawObject:forKey: template method
 	// (we know nothing of the backing store at that abstraction level)
 	for (NSString *key in [values allKeys])
 		[self setRawObject:values[key] forKey:key];

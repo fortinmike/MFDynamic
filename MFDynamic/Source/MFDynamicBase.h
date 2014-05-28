@@ -25,7 +25,7 @@
 
 /**
  *  Loads a set of keys and values in the backing store. Because this method calls the
- *  setObject:forKey: template method, it works with whatever backing store you implement.
+ *  setRawObject:forKey: template method, it works with whatever backing store you implement.
  *  Keys must match the *Key Specification* for the dynamic properties to map properly
  *  to the provided values.
  *

@@ -108,6 +108,26 @@ describe(@"MFDynamicStorage", ^
 		});
 	});
 	
+	context(@"special treatment", ^
+	{
+		it(@"should store and retrieve NSURL instances", ^
+		{
+			
+		});
+		
+#if TARGET_OS_IPHONE
+		it(@"should store and retrieve UIColor instances", ^
+		{
+			
+		});
+#else
+		it(@"should store and retrieve NSColor instances", ^
+		{
+		
+		});
+#endif
+	});
+	
 	context(@"object compatibility", ^
 	{
 		it(@"should store and retrieve NSDictionary-compatible objects", ^
