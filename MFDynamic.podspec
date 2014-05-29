@@ -13,6 +13,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.source_files = 'MFDynamic/Source'
+  s.prefix_header_file = 'MFDynamic/Source/MFDynamic-Prefix.pch'
   s.public_header_files = 'MFDynamic/Source/**/*.h'
   
   s.dependency 'MAObjCRuntime', '~> 0.0.1'
