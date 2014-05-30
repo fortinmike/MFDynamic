@@ -105,17 +105,29 @@
 
 + (NSString *)HEXColorStringWithRed:(CGFloat)red green:(CGFloat)green blue:(CGFloat)blue alpha:(CGFloat)alpha
 {
-	return nil;
+	int r = roundf(red * 255);
+	int g = roundf(green * 255);
+	int b = roundf(blue * 255);
+	int a = roundf(alpha * 255);
+	
+	if (fabs(alpha - 1.0) < FLT_EPSILON)
+	{
+		// The alpha component is 1.0
+		return [[NSString stringWithFormat:@"%02x%02x%02x", r, g, b] uppercaseString];
+	}
+	
+	return [[NSString stringWithFormat:@"%02x%02x%02x%02x", r, g, b, a] uppercaseString];
 }
 
 + (void)red:(CGFloat *)red green:(CGFloat *)green blue:(CGFloat *)blue alpha:(CGFloat *)alpha fromHEXColorString:(NSString *)hexColorString
 {
-	if ([hexColorString length] < 6)
+	if ([hexColorString length] <= 6)
 	{
 		// Without alpha
 		*red = [self colorComponentFromHex:hexColorString range:NSMakeRange(0, 2)];
 		*green = [self colorComponentFromHex:hexColorString range:NSMakeRange(2, 2)];
 		*blue = [self colorComponentFromHex:hexColorString range:NSMakeRange(4, 2)];
+		*alpha = 1.0;
 	}
 	else if ([hexColorString length] == 8)
 	{
@@ -127,14 +139,14 @@
 	}
 }
 
-+ (unsigned int)colorComponentFromHex:(NSString *)hexString range:(NSRange)range
++ (CGFloat)colorComponentFromHex:(NSString *)hexString range:(NSRange)range
 {
 	NSString *substring = [hexString substringWithRange:range];
 	
 	unsigned int integer;
-	return [[NSScanner scannerWithString:substring] scanHexInt:&integer];
+	[[NSScanner scannerWithString:substring] scanHexInt:&integer];
 	
-	return integer;
+	return integer / 255.0f;
 }
 
 @end
