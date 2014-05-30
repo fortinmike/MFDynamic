@@ -46,13 +46,13 @@ describe(@"MFDynamicDefaults", ^
 	{
 		it(@"should have its dynamically-generated setter called", ^
 		{
-			[[[testDefaults->_userDefaults should] receive] setRawObject:any() forKey:any()];
+			[[[testDefaults->_userDefaults should] receive] setObject:any() forKey:any()];
 			[testDefaults setBoolValue:YES];
 		});
 		
 		it(@"should have its dynamically-generated getter called", ^
 		{
-			[[[testDefaults->_userDefaults should] receive] rawObjectForKey:any()];
+			[[[testDefaults->_userDefaults should] receive] objectForKey:any()];
 			[testDefaults boolValue];
 		});
 		
