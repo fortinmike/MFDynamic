@@ -51,6 +51,9 @@
 #if TARGET_OS_IPHONE
 @property UIImage *uiImageValue;
 @property UIColor *uiColorValue;
+#else
+@property NSImage *nsImageValue;
+@property NSColor *nsColorValue;
 #endif
 
 #pragma mark id

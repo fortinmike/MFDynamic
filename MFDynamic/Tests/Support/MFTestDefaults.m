@@ -43,6 +43,9 @@
 #if TARGET_OS_IPHONE
 @dynamic uiImageValue;
 @dynamic uiColorValue;
+#else
+@dynamic nsImageValue;
+@dynamic nsColorValue;
 #endif
 
 #pragma mark id
