@@ -42,6 +42,16 @@ describe(@"MFDynamicDefaults", ^
 		testDefaults->_userDefaults = (NSUserDefaults *)[[MFTestUserDefaults alloc] init];
 	});
 	
+	context(@"shared instance", ^
+	{
+		it(@"should return an instance of the MFDynamicDefaults subclass", ^
+		{
+			id instance = [MFTestDefaults sharedDefaults];
+			
+			[[instance should] beKindOfClass:[MFTestDefaults class]];
+		});
+	});
+	
 	context(@"when using accessors", ^
 	{
 		it(@"should have its dynamically-generated setter called", ^
