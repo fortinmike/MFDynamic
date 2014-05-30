@@ -111,18 +111,30 @@ describe(@"MFDynamicBase", ^
 	{
 		it(@"should store and retrieve NSURL instances", ^
 		{
+			NSURL *url = [NSURL URLWithString:@"http://www.google.com"];
 			
+			[storage setUrlValue:url];
+			
+			[[[storage urlValue] should] equal:url];
 		});
 		
 #if TARGET_OS_IPHONE
 		it(@"should store and retrieve UIColor instances", ^
 		{
+			UIColor *color = [UIColor redColor];
 			
+			[storage setUiColorValue:color];
+			
+			[[[storage uiColorValue] should] equal:color];
 		});
 #else
 		it(@"should store and retrieve NSColor instances", ^
 		{
-		
+			NSColor *color = [NSColor redColor];
+			
+			[storage setNsColorValue:color];
+			
+			[[[storage nsColorValue] should] equal:color];
 		});
 #endif
 	});
