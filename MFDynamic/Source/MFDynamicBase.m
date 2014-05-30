@@ -213,9 +213,6 @@ static NSRegularExpression *_typeEncodingClassExtractionRegex;
 		}
 	}
 	
-	if ([self isObject:property])
-		return imp_implementationWithBlock(^(MFDynamicBase *iSelf, id value) { return [iSelf setRawObject:value forKey:key]; });
-	
 	@throw [self unsupportedTypeExceptionForProperty:property];
 }
 
