@@ -1,5 +1,5 @@
 //
-//  MFDynamicBaseSpecSpec.m
+//  MFDynamicBaseSpec.m
 //  MFDynamic
 //
 //  Created by Michaël Fortin on 2014-05-30.
@@ -9,9 +9,9 @@
 #import <Kiwi/Kiwi.h>
 #import "MFTestStorage.h"
 
-SPEC_BEGIN(MFDynamicBaseSpecSpec)
+SPEC_BEGIN(MFDynamicBaseSpec)
 
-describe(@"MFDynamicBaseSpec", ^
+describe(@"MFDynamicBase", ^
 {
 	__block MFTestStorage *storage;
 	

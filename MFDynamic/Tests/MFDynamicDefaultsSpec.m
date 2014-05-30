@@ -39,7 +39,7 @@ describe(@"MFDynamicDefaults", ^
 		});
 	});
 	
-	context(@"when using defaults registration", ^
+	context(@"defaults registration", ^
 	{
 		it(@"should register user defaults properly", ^
 		{
@@ -53,34 +53,34 @@ describe(@"MFDynamicDefaults", ^
 	});
 	
 	it(@"should store and retrieve NSUserDefaults-supported instances properly", ^
-		{
-			// NSUserDefaults supports NSData, NSString, NSNumber, NSDate, NSArray and NSDictionary
-			// https://developer.apple.com/library/ios/DOCUMENTATION/Cocoa/Reference/Foundation/Classes/NSUserDefaults_Class/Reference/Reference.html
-			
-			NSData *data = [@"Data" dataUsingEncoding:NSUTF8StringEncoding];
-			[testDefaults setDataValue:data];
-			[[[testDefaults dataValue] should] equal:data];
-			
-			NSString *string = @"String";
-			[testDefaults setStringValue:string];
-			[[[testDefaults stringValue] should] equal:string];
-			
-			NSNumber *number = @(1023.3551);
-			[testDefaults setNumberValue:number];
-			[[[testDefaults numberValue] should] equal:number];
-			
-			NSDate *date = [NSDate date];
-			[testDefaults setDateValue:date];
-			[[[testDefaults dateValue] should] equal:date];
-			
-			NSArray *array = @[@"A", @"B", @"C"];
-			[testDefaults setArrayValue:array];
-			[[[testDefaults arrayValue] should] equal:array];
-			
-			NSDictionary *dictionary = @{@"A" : @"B", @"C" : @"D"};
-			[testDefaults setDictionaryValue:dictionary];
-			[[[testDefaults dictionaryValue] should] equal:dictionary];
-		});
+	{
+		// NSUserDefaults supports NSData, NSString, NSNumber, NSDate, NSArray and NSDictionary
+		// https://developer.apple.com/library/ios/DOCUMENTATION/Cocoa/Reference/Foundation/Classes/NSUserDefaults_Class/Reference/Reference.html
+		
+		NSData *data = [@"Data" dataUsingEncoding:NSUTF8StringEncoding];
+		[testDefaults setDataValue:data];
+		[[[testDefaults dataValue] should] equal:data];
+		
+		NSString *string = @"String";
+		[testDefaults setStringValue:string];
+		[[[testDefaults stringValue] should] equal:string];
+		
+		NSNumber *number = @(1023.3551);
+		[testDefaults setNumberValue:number];
+		[[[testDefaults numberValue] should] equal:number];
+		
+		NSDate *date = [NSDate date];
+		[testDefaults setDateValue:date];
+		[[[testDefaults dateValue] should] equal:date];
+		
+		NSArray *array = @[@"A", @"B", @"C"];
+		[testDefaults setArrayValue:array];
+		[[[testDefaults arrayValue] should] equal:array];
+		
+		NSDictionary *dictionary = @{@"A" : @"B", @"C" : @"D"};
+		[testDefaults setDictionaryValue:dictionary];
+		[[[testDefaults dictionaryValue] should] equal:dictionary];
+	});
 });
 
 SPEC_END
