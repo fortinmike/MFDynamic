@@ -15,7 +15,7 @@ MFDynamic eliminates stringly-typed User Defaults, NSCoding boilerplate and more
 - Removes the need to create constants for or hard-code user defaults key strings.
 - **Automatically archives objects that conform to `NSCoding`** as `NSData` and back for seamless storage in user defaults, including your own `NSCoding`-compatible objects.
 - **No need to manually convert** `UIColor` and `NSColor` to `NSData` and back; it's all done for you.
-- Some types are transparently **converted to human-readable formats** and back for storage in User Defaults for easy editing in Plist editors.
+- Some types are transparently **converted to human-readable formats** and back for storage in User Defaults for easy editing in Plist editors (such as colors and URLs).
 - Helps you **remember to provide default values** in your registered defaults by emitting warnings for missing default values when registering defaults (optional).
 
 Work with User Defaults like this:
