@@ -118,6 +118,16 @@ describe(@"MFDynamicBase", ^
 			[[[storage urlValue] should] equal:url];
 		});
 		
+		it(@"should store and retrieve NSURL file URL instances", ^
+		{
+			NSURL *url = [NSURL URLWithString:@"file:///Library/Preferences/"];
+			
+			[storage setUrlValue:url];
+			
+			[[[storage urlValue] should] equal:url];
+			[[theValue([[storage urlValue] isFileURL]) should] beYes];
+		});
+		
 #if TARGET_OS_IPHONE
 		it(@"should store and retrieve UIColor without alpha", ^
 		{
