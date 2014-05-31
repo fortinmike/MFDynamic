@@ -56,7 +56,7 @@
 + (NSURL *)URLWithStringRepresentation:(NSString *)stringRepresentation
 {
 	if ([stringRepresentation hasPrefix:@"file://"])
-		return [NSURL fileURLWithPath:stringRepresentation];
+		return [NSURL fileURLWithPath:[stringRepresentation stringByReplacingOccurrencesOfString:@"file://" withString:@""]];
 	
 	return [NSURL URLWithString:stringRepresentation];
 }
