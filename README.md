@@ -20,7 +20,7 @@ MFDynamic eliminates stringly-typed User Defaults, NSCoding boilerplate and more
 
 Work with User Defaults like this:
 
-```
+```objc
 [[MYDefaults sharedDefaults] setBackgroundColor:newBackgroundColor];
 
 UIColor *color = [[MYDefaults sharedDefaults] backgroundColor];
@@ -29,7 +29,7 @@ UIColor *color = [[MYDefaults sharedDefaults] backgroundColor];
 ... instead of like this:
 
 
-```
+```objc
 FOUNDATION_EXPORT static NSString *MYBackgroundColorKey;
 
 ...
@@ -48,7 +48,7 @@ UIColor *color = [NSKeyedUnarchiver unarchiveObjectWithData:colorData];
 
 	**Interface**
 	
-	```
+	```objc
 	@interface MYAppDefaults : MFDynamicDefaults
 	
 	@property BOOL autoPlayVoiceOver;
@@ -60,7 +60,7 @@ UIColor *color = [NSKeyedUnarchiver unarchiveObjectWithData:colorData];
 	
 	**Implementation**
 	
-	```
+	```objc
 	@implementation MYAppDefaults
 	
 	@property autoPlayVoiceOver;
@@ -72,7 +72,7 @@ UIColor *color = [NSKeyedUnarchiver unarchiveObjectWithData:colorData];
 	
 3. Use the shared instance of your `MYAppDefaults` class to access user defaults:
 
-	```
+	```objc
 	[[MYDefaults sharedDefaults] setAutoPlayVoiceOver:YES];
 	
 	BOOL autoPlayVoiceOver = [[MYDefaults sharedDefaults] autoPlayVoiceOver];
@@ -82,7 +82,7 @@ UIColor *color = [NSKeyedUnarchiver unarchiveObjectWithData:colorData];
 
 Like `NSUserDefaults`, `MFDynamicDefaults` allows registering defaults from a dictionary:
 
-```
+```objc
 NSDictionary *defaults = [NSDictionary dictionaryWithContentsOfFile:@"/Path/To/Plist/File"];
 [[MYAppDefaults sharedDefaults] registerDefaults:defaults emitMissingDefaultValueWarnings:YES];
 ```
@@ -100,7 +100,7 @@ By default, `MFDynamicDefaults` emits a warning when one of its dynamic properti
 
 	**Interface**
 	
-	```
+	```objc
 	@interface MYModelClass : MFDynamicStorage
 	
 	@property UIColor *backgroundColor;
@@ -114,7 +114,7 @@ By default, `MFDynamicDefaults` emits a warning when one of its dynamic properti
 	
 	**Implementation**
 	
-	```
+	```objc
 	@implementation MYModelClass
 	
 	@dynamic backgroundColor;
@@ -129,7 +129,7 @@ By default, `MFDynamicDefaults` emits a warning when one of its dynamic properti
 
 3. Save and load your objects from disk with zero `NSCoding` boilerplate:
 
-	```
+	```objc
 	[modelClass saveToFile:@"/Users/Michael/Desktop/WhyAmISavingAModelFileToTheDesktop"];
 	
 	MYModelClass *modelClass = [MYModelClass loadFromFile:@"/Users/Michael/Desktop/WhyAmISavingAModelFileToTheDesktop"];
