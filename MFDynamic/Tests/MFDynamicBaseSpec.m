@@ -119,7 +119,7 @@ describe(@"MFDynamicBase", ^
 		});
 		
 #if TARGET_OS_IPHONE
-		it(@"should store and retrieve UIColor instances", ^
+		it(@"should store and retrieve UIColor without alpha", ^
 		{
 			UIColor *color = [UIColor redColor];
 			
@@ -127,10 +127,28 @@ describe(@"MFDynamicBase", ^
 			
 			[[[storage uiColorValue] should] equal:color];
 		});
+		
+		it(@"should store and retrieve UIColor with alpha", ^
+		{
+			UIColor *color = [UIColor colorWithRed:1.0 green:0.0 blue:1.0 alpha:0.4];
+			
+			[storage setUiColorValue:color];
+			
+			[[[storage uiColorValue] should] equal:color];
+		});
 #else
-		it(@"should store and retrieve NSColor instances", ^
+		it(@"should store and retrieve NSColor without alpha", ^
 		{
 			NSColor *color = [NSColor redColor];
+			
+			[storage setNsColorValue:color];
+			
+			[[[storage nsColorValue] should] equal:color];
+		});
+		
+		it(@"should store and retrieve NSColor with alpha", ^
+		{
+			NSColor *color = [NSColor colorWithCalibratedRed:1.0 green:0.0 blue:1.0 alpha:0.4];
 			
 			[storage setNsColorValue:color];
 			
