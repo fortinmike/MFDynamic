@@ -130,9 +130,9 @@ By default, `MFDynamicDefaults` emits a warning when one of its dynamic properti
 3. Save and load your objects from disk with zero `NSCoding` boilerplate:
 
 	```objc
-	[modelClass saveToFile:@"/Users/Michael/Desktop/WhyAmISavingAModelFileToTheDesktop"];
+	[modelClass saveToFile:@"/Users/Michael/Desktop/MyFile"];
 	
-	MYModelClass *modelClass = [MYModelClass loadFromFile:@"/Users/Michael/Desktop/WhyAmISavingAModelFileToTheDesktop"];
+	MYModelClass *modelClass = [MYModelClass loadFromFile:@"/Users/Michael/Desktop/MyFile"];
 	```
 
 ## Implementation Details
