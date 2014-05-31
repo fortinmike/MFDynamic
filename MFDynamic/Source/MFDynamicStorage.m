@@ -29,18 +29,12 @@
 
 + (instancetype)loadFromFile:(NSString *)file
 {
-	NSDictionary *values = [NSMutableDictionary dictionaryWithContentsOfFile:file];
-	if (!values) return nil;
-	
-	MFDynamicStorage *instance = [[[self class] alloc] init];
-	instance->_values = [values mutableCopy];
-	
-	return instance;
+	return [NSKeyedUnarchiver unarchiveObjectWithFile:file];
 }
 
 - (BOOL)saveToFile:(NSString *)file
 {
-	return [_values writeToFile:file atomically:YES];
+	return [NSKeyedArchiver archiveRootObject:self toFile:file];
 }
 
 #pragma mark Template Methods Implementation

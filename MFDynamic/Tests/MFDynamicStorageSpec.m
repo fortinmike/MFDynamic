@@ -35,12 +35,12 @@ describe(@"MFDynamicStorage", ^
 			[storage setIntValue:42];
 			[storage setNsCodingImplementer:nsCodingImplementer];
 			
-			// Archive the file and validate that it succeeded
-			BOOL success = [NSKeyedArchiver archiveRootObject:storage toFile:tempFile];
+			// Save to a file and validate that it succeeded
+			BOOL success = [storage saveToFile:tempFile];
 			[[theValue(success) should] beYes];
 			
-			// Unarchive the file and check values
-			MFTestStorage *unarchived = [NSKeyedUnarchiver unarchiveObjectWithFile:tempFile];
+			// Load from the file and check values
+			MFTestStorage *unarchived = [MFTestStorage loadFromFile:tempFile];
 			[[[unarchived stringValue] should] equal:@"My Value"];
 			[[theValue([unarchived intValue]) should] equal:theValue(42)];
 			[[theValue([[unarchived nsCodingImplementer] number]) should] equal:theValue(2)];
