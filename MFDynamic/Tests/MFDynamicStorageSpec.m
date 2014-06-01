@@ -46,6 +46,21 @@ describe(@"MFDynamicStorage", ^
 			[[theValue([[unarchived nsCodingImplementer] number]) should] equal:theValue(2)];
 		});
 	});
+	
+	context(@"values", ^
+	{
+		it(@"should support nil values", ^
+		{
+			[storage setDateValue:[NSDate date]];
+			[storage setStringValue:@"All work and no play makes Jack a dull boy"];
+			
+			[[theBlock(^{ [storage setDateValue:nil]; }) shouldNot] raise];
+			[[theBlock(^{ [storage setStringValue:nil]; }) shouldNot] raise];
+			
+			[[[storage dateValue] should] beNil];
+			[[[storage stringValue] should] beNil];
+		});
+	});
 });
 
 SPEC_END
