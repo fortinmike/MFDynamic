@@ -260,6 +260,31 @@ describe(@"MFDynamicBase", ^
 			[[[storage objectValue] should] beNil];
 		});
 	});
+	
+	context(@"loading values", ^
+	{
+		it(@"should load and map values properly", ^
+		{
+			NSDictionary *values = @{ @"IntValue" : @(10), @"StringValue" : @"Wello!" };
+			
+			[storage loadValues:values];
+			
+			[[theValue([storage intValue]) should] equal:theValue(10)];
+			[[[storage stringValue] should] equal:@"Wello!"];
+		});
+		
+		it(@"should emit warnings when enabled", ^
+		{
+			NSDictionary *values = @{ @"IntValue" : @(10), @"StringValue" : @"Wello!" };
+			
+			[[storage should] receive:@selector(checkForMissingValuesAndEmitWarnings)];
+			
+			[storage loadValues:values emitMissingValueWarnings:YES];
+			
+			[[theValue([storage intValue]) should] equal:theValue(10)];
+			[[[storage stringValue] should] equal:@"Wello!"];
+		});
+	});
 });
 
 SPEC_END
