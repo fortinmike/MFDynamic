@@ -1,5 +1,6 @@
 # MFDynamic
 
+[![Build Status](https://travis-ci.org/fortinmike/MFDynamic.svg?branch=master)](https://travis-ci.org/fortinmike/MFDynamic)
 [![Coverage Status](https://coveralls.io/repos/fortinmike/MFDynamic/badge.png?branch=master)](https://coveralls.io/r/fortinmike/MFDynamic?branch=master)
 [![Version](http://cocoapod-badges.herokuapp.com/v/MFDynamic/badge.png)](http://cocoadocs.org/docsets/MFDynamic)
 [![Platform](http://cocoapod-badges.herokuapp.com/p/MFDynamic/badge.png)](http://cocoadocs.org/docsets/MFDynamic)
