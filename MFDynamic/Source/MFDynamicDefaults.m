@@ -60,7 +60,7 @@
 
 - (void)setRawObject:(id)object forKey:(NSString *)key
 {
-	[_userDefaults setObject:object forKey:key];
+	object ? [_userDefaults setObject:object forKey:key] : [_userDefaults removeObjectForKey:key];
 }
 
 - (BOOL)shouldEmitMissingValueWarningForProperty:(NSString *)propertyName
