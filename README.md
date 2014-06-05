@@ -64,9 +64,9 @@ UIColor *color = [NSKeyedUnarchiver unarchiveObjectWithData:colorData];
 	```objc
 	@implementation MYAppDefaults
 	
-	@property autoPlayVoiceOver;
-	@property loginTimeoutInterval;
-	@property lastUpdate;
+	@dynamic autoPlayVoiceOver;
+	@dynamic loginTimeoutInterval;
+	@dynamic lastUpdate;
 	
 	@end
 	```
