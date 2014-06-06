@@ -135,7 +135,13 @@ describe(@"MFDynamicBase", ^
 			
 			[storage setUiColorValue:color];
 			
-			[[[storage uiColorValue] should] equal:color];
+			CGFloat r, g, b, a;
+			[[storage uiColorValue] getRed:&r green:&g blue:&b alpha:&a];
+			
+			[[theValue(r) should] equal:1.0 withDelta:FLT_EPSILON];
+			[[theValue(g) should] equal:0.0 withDelta:FLT_EPSILON];
+			[[theValue(b) should] equal:0.0 withDelta:FLT_EPSILON];
+			[[theValue(a) should] equal:1.0 withDelta:FLT_EPSILON];
 		});
 		
 		it(@"should store and retrieve UIColor with alpha", ^
@@ -144,7 +150,13 @@ describe(@"MFDynamicBase", ^
 			
 			[storage setUiColorValue:color];
 			
-			[[[storage uiColorValue] should] equal:color];
+			CGFloat r, g, b, a;
+			[[storage uiColorValue] getRed:&r green:&g blue:&b alpha:&a];
+			
+			[[theValue(r) should] equal:1.0 withDelta:FLT_EPSILON];
+			[[theValue(g) should] equal:0.0 withDelta:FLT_EPSILON];
+			[[theValue(b) should] equal:1.0 withDelta:FLT_EPSILON];
+			[[theValue(a) should] equal:0.4 withDelta:FLT_EPSILON];
 		});
 #else
 		it(@"should store and retrieve NSColor without alpha", ^
@@ -153,7 +165,13 @@ describe(@"MFDynamicBase", ^
 			
 			[storage setNsColorValue:color];
 			
-			[[[storage nsColorValue] should] equal:color];
+			CGFloat r, g, b, a;
+			[[storage nsColorValue] getRed:&r green:&g blue:&b alpha:&a];
+			
+			[[theValue(r) should] equal:1.0 withDelta:FLT_EPSILON];
+			[[theValue(g) should] equal:0.0 withDelta:FLT_EPSILON];
+			[[theValue(b) should] equal:0.0 withDelta:FLT_EPSILON];
+			[[theValue(a) should] equal:1.0 withDelta:FLT_EPSILON];
 		});
 		
 		it(@"should store and retrieve NSColor with alpha", ^
@@ -162,7 +180,13 @@ describe(@"MFDynamicBase", ^
 			
 			[storage setNsColorValue:color];
 			
-			[[[storage nsColorValue] should] equal:color];
+			CGFloat r, g, b, a;
+			[[storage nsColorValue] getRed:&r green:&g blue:&b alpha:&a];
+			
+			[[theValue(r) should] equal:1.0 withDelta:FLT_EPSILON];
+			[[theValue(g) should] equal:0.0 withDelta:FLT_EPSILON];
+			[[theValue(b) should] equal:1.0 withDelta:FLT_EPSILON];
+			[[theValue(a) should] equal:0.4 withDelta:FLT_EPSILON];
 		});
 #endif
 	});

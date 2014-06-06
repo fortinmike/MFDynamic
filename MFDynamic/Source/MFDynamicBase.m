@@ -104,20 +104,29 @@ static NSRegularExpression *_typeEncodingClassExtractionRegex;
 		return imp_implementationWithBlock(^(MFDynamicBase *iSelf) { return [[iSelf rawObjectForKey:key] boolValue]; });
 	
 	if ([self isObject:property])
-		return imp_implementationWithBlock(^(MFDynamicBase *iSelf) { return [iSelf getAndProcessRawObjectForKey:key property:property]; });
+		return imp_implementationWithBlock(^(MFDynamicBase *iSelf)
+	{
+		BOOL handled;
+		id object = [iSelf getAndProcessRawObjectForKey:key property:property handled:&handled];
+		
+		if (!handled) @throw [self unsupportedTypeExceptionForProperty:property];
+		return object;
+	});
 	
 	@throw [self unsupportedTypeExceptionForProperty:property];
 }
 
-- (id)getAndProcessRawObjectForKey:(NSString *)key property:(RTProperty *)property
+- (id)getAndProcessRawObjectForKey:(NSString *)key property:(RTProperty *)property handled:(BOOL *)handled
 {
+	if (handled) *handled = YES;
+	
 	if ([[self class] isKindOfPropertyArchivableAsIs:property] || [[self class] isProperty:property ofType:@encode(id)])
 	{
 		return [self rawObjectForKey:key];
 	}
 	else if ([[self class] isProperty:property ofKind:[NSURL class]] ||
 #if TARGET_OS_IPHONE
-			 [[self class] isProperty:property ofKind:[UIColor class]] ||
+			 [[self class] isProperty:property ofKind:[UIColor class]]
 #else
 			 [[self class] isProperty:property ofKind:[NSColor class]]
 #endif
@@ -132,6 +141,9 @@ static NSRegularExpression *_typeEncodingClassExtractionRegex;
 		if (![data isKindOfClass:[NSData class]]) return (id)nil;
 		return [NSKeyedUnarchiver unarchiveObjectWithData:data];
 	}
+	
+	if (handled) *handled = NO;
+	return [self rawObjectForKey:key];
 }
 
 + (IMP)setterImplementationForProperty:(RTProperty *)property
@@ -179,34 +191,47 @@ static NSRegularExpression *_typeEncodingClassExtractionRegex;
 		return imp_implementationWithBlock(^(MFDynamicBase *iSelf, BOOL value) { return [iSelf setRawObject:@(value) forKey:key propertyName:name]; });
 	
 	if ([self isObject:property])
-		return imp_implementationWithBlock(^(MFDynamicBase *iSelf, id value) { [iSelf processAndSetRawObject:value forKey:key property:name]; });
+		return imp_implementationWithBlock(^(MFDynamicBase *iSelf, id value)
+	{
+		BOOL handled;
+		[iSelf processAndSetRawObject:value forKey:key property:property handled:&handled];
+		
+		if (!handled) @throw [[self class] unsupportedTypeExceptionForProperty:property];
+	});
 	
 	@throw [self unsupportedTypeExceptionForProperty:property];
 }
 
-- (void)processAndSetRawObject:(id)object forKey:(NSString *)key property:(RTProperty *)property
+- (void)processAndSetRawObject:(id)object forKey:(NSString *)key property:(RTProperty *)property handled:(BOOL *)handled
 {
+	if (handled) *handled = YES;
+	
 	NSString *propertyName = [property name];
 	
 	if ([[self class] isKindOfPropertyArchivableAsIs:property] || [[self class] isProperty:property ofType:@encode(id)])
 	{
 		[self setRawObject:object forKey:key propertyName:propertyName];
+		return;
 	}
 	else if ([[self class] isProperty:property ofKind:[NSURL class]] ||
 #if TARGET_OS_IPHONE
-			 [[self class] isProperty:property ofKind:[UIColor class]] ||
+			 [[self class] isProperty:property ofKind:[UIColor class]]
 #else
 			 [[self class] isProperty:property ofKind:[NSColor class]]
 #endif
 			 )
 	{
 		[self setRawObject:[MFHumanReadableConverter convertToHumanReadable:object] forKey:key propertyName:propertyName];
+		return;
 	}
 	else if ([[self class] propertyObjectTypeImplementsNSCoding:property])
 	{
 		NSData *data = [NSKeyedArchiver archivedDataWithRootObject:object];
 		[self setRawObject:data forKey:key propertyName:propertyName];
+		return;
 	}
+	
+	if (handled) *handled = NO;
 }
 
 + (BOOL)isProperty:(RTProperty *)property ofType:(const char *)type
@@ -329,12 +354,18 @@ static NSRegularExpression *_typeEncodingClassExtractionRegex;
 
 - (id)valueForKey:(NSString *)key
 {
-	
+	RTProperty *property = [[self class] rt_propertyForName:key];
+	return [self getAndProcessRawObjectForKey:key property:property handled:NULL];
 }
 
 - (void)setValue:(id)value forKey:(NSString *)key
 {
+	RTProperty *property = [[self class] rt_propertyForName:key];
 	
+	BOOL handled;
+	[self processAndSetRawObject:value forKey:key property:property handled:&handled];
+	
+	if (!handled) [self setRawObject:value forKey:key propertyName:[property name]];
 }
 
 #pragma mark Template Methods
