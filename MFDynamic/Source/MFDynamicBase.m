@@ -352,15 +352,17 @@ static NSRegularExpression *_typeEncodingClassExtractionRegex;
 
 #pragma mark Key-Value Coding
 
-- (id)valueForKey:(NSString *)key
+- (id)valueForKey:(NSString *)propertyName
 {
-	RTProperty *property = [[self class] rt_propertyForName:key];
+	RTProperty *property = [[self class] rt_propertyForName:propertyName];
+	NSString *key = [[self class] keyForProperty:property];
 	return [self getAndProcessRawObjectForKey:key property:property handled:NULL];
 }
 
-- (void)setValue:(id)value forKey:(NSString *)key
+- (void)setValue:(id)value forKey:(NSString *)propertyName
 {
-	RTProperty *property = [[self class] rt_propertyForName:key];
+	RTProperty *property = [[self class] rt_propertyForName:propertyName];
+	NSString *key = [[self class] keyForProperty:property];
 	
 	BOOL handled;
 	[self processAndSetRawObject:value forKey:key property:property handled:&handled];
