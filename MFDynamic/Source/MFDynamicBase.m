@@ -104,39 +104,34 @@ static NSRegularExpression *_typeEncodingClassExtractionRegex;
 		return imp_implementationWithBlock(^(MFDynamicBase *iSelf) { return [[iSelf rawObjectForKey:key] boolValue]; });
 	
 	if ([self isObject:property])
-	{
-		if ([self isKindOfPropertyArchivableAsIs:property] || [self isProperty:property ofType:@encode(id)])
-		{
-			return imp_implementationWithBlock(^(MFDynamicBase *iSelf) { return [iSelf rawObjectForKey:key]; });
-		}
-		else if ([self isProperty:property ofKind:[NSURL class]])
-		{
-			return imp_implementationWithBlock(^(MFDynamicBase *iSelf)
-			{
-				return [MFHumanReadableConverter convertFromHumanReadable:[iSelf rawObjectForKey:key] withTargetType:[NSURL class]];
-			});
-		}
-#if TARGET_OS_IPHONE
-		else if ([self isProperty:property ofKind:[UIColor class]])
-		{
-			return imp_implementationWithBlock(^(MFDynamicBase *iSelf)
-			{
-				return [MFHumanReadableConverter convertFromHumanReadable:[iSelf rawObjectForKey:key] withTargetType:[UIColor class]];
-			});
-		}
-#endif
-		else if ([self propertyObjectTypeImplementsNSCoding:property])
-		{
-			return imp_implementationWithBlock(^(MFDynamicBase *iSelf)
-		    {
-				NSData *data = [iSelf rawObjectForKey:key];
-			    if (![data isKindOfClass:[NSData class]]) return (id)nil;
-			    return [NSKeyedUnarchiver unarchiveObjectWithData:data];
-			});
-		}
-	}
+		return imp_implementationWithBlock(^(MFDynamicBase *iSelf) { return [iSelf getAndProcessRawObjectForKey:key property:property]; });
 	
 	@throw [self unsupportedTypeExceptionForProperty:property];
+}
+
+- (id)getAndProcessRawObjectForKey:(NSString *)key property:(RTProperty *)property
+{
+	if ([[self class] isKindOfPropertyArchivableAsIs:property] || [[self class] isProperty:property ofType:@encode(id)])
+	{
+		return [self rawObjectForKey:key];
+	}
+	else if ([[self class] isProperty:property ofKind:[NSURL class]] ||
+#if TARGET_OS_IPHONE
+			 [[self class] isProperty:property ofKind:[UIColor class]] ||
+#else
+			 [[self class] isProperty:property ofKind:[NSColor class]]
+#endif
+			 )
+	{
+		Class targetType = [[self class] classOfProperty:property];
+		return [MFHumanReadableConverter convertFromHumanReadable:[self rawObjectForKey:key] withTargetType:targetType];
+	}
+	else if ([[self class] propertyObjectTypeImplementsNSCoding:property])
+	{
+		NSData *data = [self rawObjectForKey:key];
+		if (![data isKindOfClass:[NSData class]]) return (id)nil;
+		return [NSKeyedUnarchiver unarchiveObjectWithData:data];
+	}
 }
 
 + (IMP)setterImplementationForProperty:(RTProperty *)property
@@ -184,38 +179,34 @@ static NSRegularExpression *_typeEncodingClassExtractionRegex;
 		return imp_implementationWithBlock(^(MFDynamicBase *iSelf, BOOL value) { return [iSelf setRawObject:@(value) forKey:key propertyName:name]; });
 	
 	if ([self isObject:property])
-	{
-		if ([self isKindOfPropertyArchivableAsIs:property] || [self isProperty:property ofType:@encode(id)])
-		{
-			return imp_implementationWithBlock(^(MFDynamicBase *iSelf, id value) { [iSelf setRawObject:value forKey:key propertyName:name]; });
-		}
-		else if ([self isProperty:property ofKind:[NSURL class]])
-		{
-			return imp_implementationWithBlock(^(MFDynamicBase *iSelf, NSURL *url)
-			{
-				[iSelf setRawObject:[MFHumanReadableConverter convertToHumanReadable:url] forKey:key propertyName:name];
-			});
-		}
-#if TARGET_OS_IPHONE
-		else if ([self isProperty:property ofKind:[UIColor class]])
-		{
-			return imp_implementationWithBlock(^(MFDynamicBase *iSelf, UIColor *color)
-			{
-				[iSelf setRawObject:[MFHumanReadableConverter convertToHumanReadable:color] forKey:key propertyName:name];
-			});
-		}
-#endif
-		else if ([self propertyObjectTypeImplementsNSCoding:property])
-		{
-			return imp_implementationWithBlock(^(MFDynamicBase *iSelf, id value)
-		    {
-				NSData *data = [NSKeyedArchiver archivedDataWithRootObject:value];
-				[iSelf setRawObject:data forKey:key propertyName:name];
-			});
-		}
-	}
+		return imp_implementationWithBlock(^(MFDynamicBase *iSelf, id value) { [iSelf processAndSetRawObject:value forKey:key property:name]; });
 	
 	@throw [self unsupportedTypeExceptionForProperty:property];
+}
+
+- (void)processAndSetRawObject:(id)object forKey:(NSString *)key property:(RTProperty *)property
+{
+	NSString *propertyName = [property name];
+	
+	if ([[self class] isKindOfPropertyArchivableAsIs:property] || [[self class] isProperty:property ofType:@encode(id)])
+	{
+		[self setRawObject:object forKey:key propertyName:propertyName];
+	}
+	else if ([[self class] isProperty:property ofKind:[NSURL class]] ||
+#if TARGET_OS_IPHONE
+			 [[self class] isProperty:property ofKind:[UIColor class]] ||
+#else
+			 [[self class] isProperty:property ofKind:[NSColor class]]
+#endif
+			 )
+	{
+		[self setRawObject:[MFHumanReadableConverter convertToHumanReadable:object] forKey:key propertyName:propertyName];
+	}
+	else if ([[self class] propertyObjectTypeImplementsNSCoding:property])
+	{
+		NSData *data = [NSKeyedArchiver archivedDataWithRootObject:object];
+		[self setRawObject:data forKey:key propertyName:propertyName];
+	}
 }
 
 + (BOOL)isProperty:(RTProperty *)property ofType:(const char *)type
@@ -281,13 +272,6 @@ static NSRegularExpression *_typeEncodingClassExtractionRegex;
 	return [propertyName stringByReplacingCharactersInRange:NSMakeRange(0, 1) withString:capitalizedFirstLetter];
 }
 
-+ (NSString *)setterNameForPropertyName:(NSString *)propertyName
-{
-	NSString *capitalizedFirstLetter = [[propertyName substringToIndex:1] uppercaseString];
-	NSString *capitalizedPropertyName = [propertyName stringByReplacingCharactersInRange:NSMakeRange(0, 1) withString:capitalizedFirstLetter];
-	return [NSString stringWithFormat:@"set%@:", capitalizedPropertyName];
-}
-
 + (SEL)getterSelectorForProperty:(RTProperty *)property
 {
 	return NSSelectorFromString([property name]);
@@ -345,15 +329,12 @@ static NSRegularExpression *_typeEncodingClassExtractionRegex;
 
 - (id)valueForKey:(NSString *)key
 {
-	return objc_msgSend(self, NSSelectorFromString(key));
+	
 }
 
 - (void)setValue:(id)value forKey:(NSString *)key
 {
-	NSString *setterName = [[self class] setterNameForPropertyName:key];
 	
-	// TODO: We
-	objc_msgSend(self, NSSelectorFromString(setterName), value);
 }
 
 #pragma mark Template Methods
