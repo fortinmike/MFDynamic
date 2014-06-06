@@ -9,6 +9,7 @@
 //  https://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/ObjCRuntimeGuide/Articles/ocrtTypeEncodings.html#//apple_ref/doc/uid/TP40008048-CH100
 //
 
+#import <objc/message.h>
 #import <MARTNSObject.h>
 #import <RTMethod.h>
 #import <RTProperty.h>
@@ -103,117 +104,134 @@ static NSRegularExpression *_typeEncodingClassExtractionRegex;
 		return imp_implementationWithBlock(^(MFDynamicBase *iSelf) { return [[iSelf rawObjectForKey:key] boolValue]; });
 	
 	if ([self isObject:property])
+		return imp_implementationWithBlock(^(MFDynamicBase *iSelf)
 	{
-		if ([self isKindOfPropertyArchivableAsIs:property] || [self isProperty:property ofType:@encode(id)])
-		{
-			return imp_implementationWithBlock(^(MFDynamicBase *iSelf) { return [iSelf rawObjectForKey:key]; });
-		}
-		else if ([self isProperty:property ofKind:[NSURL class]])
-		{
-			return imp_implementationWithBlock(^(MFDynamicBase *iSelf)
-			{
-				return [MFHumanReadableConverter convertFromHumanReadable:[iSelf rawObjectForKey:key] withTargetType:[NSURL class]];
-			});
-		}
-#if TARGET_OS_IPHONE
-		else if ([self isProperty:property ofKind:[UIColor class]])
-		{
-			return imp_implementationWithBlock(^(MFDynamicBase *iSelf)
-			{
-				return [MFHumanReadableConverter convertFromHumanReadable:[iSelf rawObjectForKey:key] withTargetType:[UIColor class]];
-			});
-		}
-#endif
-		else if ([self propertyObjectTypeImplementsNSCoding:property])
-		{
-			return imp_implementationWithBlock(^(MFDynamicBase *iSelf)
-		    {
-				NSData *data = [iSelf rawObjectForKey:key];
-			    if (![data isKindOfClass:[NSData class]]) return (id)nil;
-			    return [NSKeyedUnarchiver unarchiveObjectWithData:data];
-			});
-		}
-	}
+		BOOL handled;
+		id object = [iSelf getAndProcessRawObjectForKey:key property:property handled:&handled];
+		
+		if (!handled) @throw [self unsupportedTypeExceptionForProperty:property];
+		return object;
+	});
 	
 	@throw [self unsupportedTypeExceptionForProperty:property];
+}
+
+- (id)getAndProcessRawObjectForKey:(NSString *)key property:(RTProperty *)property handled:(BOOL *)handled
+{
+	if (handled) *handled = YES;
+	
+	if ([[self class] isKindOfPropertyArchivableAsIs:property] || [[self class] isProperty:property ofType:@encode(id)])
+	{
+		return [self rawObjectForKey:key];
+	}
+	else if ([[self class] isProperty:property ofKind:[NSURL class]] ||
+#if TARGET_OS_IPHONE
+			 [[self class] isProperty:property ofKind:[UIColor class]]
+#else
+			 [[self class] isProperty:property ofKind:[NSColor class]]
+#endif
+			 )
+	{
+		Class targetType = [[self class] classOfProperty:property];
+		return [MFHumanReadableConverter convertFromHumanReadable:[self rawObjectForKey:key] withTargetType:targetType];
+	}
+	else if ([[self class] propertyObjectTypeImplementsNSCoding:property])
+	{
+		NSData *data = [self rawObjectForKey:key];
+		if (![data isKindOfClass:[NSData class]]) return (id)nil;
+		return [NSKeyedUnarchiver unarchiveObjectWithData:data];
+	}
+	
+	if (handled) *handled = NO;
+	return [self rawObjectForKey:key];
 }
 
 + (IMP)setterImplementationForProperty:(RTProperty *)property
 {
 	NSString *key = [self keyForProperty:property];
+	NSString *name = [property name];
 	
 	if ([self isProperty:property ofType:@encode(char)])
-		return imp_implementationWithBlock(^(MFDynamicBase *iSelf, char value) { return [iSelf setRawObject:@(value) forKey:key]; });
+		return imp_implementationWithBlock(^(MFDynamicBase *iSelf, char value) { return [iSelf setRawObject:@(value) forKey:key propertyName:name]; });
 	
 	if ([self isProperty:property ofType:@encode(int)])
-		return imp_implementationWithBlock(^(MFDynamicBase *iSelf, int value) { return [iSelf setRawObject:@(value) forKey:key]; });
+		return imp_implementationWithBlock(^(MFDynamicBase *iSelf, int value) { return [iSelf setRawObject:@(value) forKey:key propertyName:name]; });
 	
 	if ([self isProperty:property ofType:@encode(short)])
-		return imp_implementationWithBlock(^(MFDynamicBase *iSelf, short value) { return [iSelf setRawObject:@(value) forKey:key]; });
+		return imp_implementationWithBlock(^(MFDynamicBase *iSelf, short value) { return [iSelf setRawObject:@(value) forKey:key propertyName:name]; });
 	
 	if ([self isProperty:property ofType:@encode(long)])
-		return imp_implementationWithBlock(^(MFDynamicBase *iSelf, long value) { return [iSelf setRawObject:@(value) forKey:key]; });
+		return imp_implementationWithBlock(^(MFDynamicBase *iSelf, long value) { return [iSelf setRawObject:@(value) forKey:key propertyName:name]; });
 	
 	if ([self isProperty:property ofType:@encode(long long)])
-		return imp_implementationWithBlock(^(MFDynamicBase *iSelf, long long value) { return [iSelf setRawObject:@(value) forKey:key]; });
+		return imp_implementationWithBlock(^(MFDynamicBase *iSelf, long long value) { return [iSelf setRawObject:@(value) forKey:key propertyName:name]; });
 	
 	if ([self isProperty:property ofType:@encode(unsigned char)])
-		return imp_implementationWithBlock(^(MFDynamicBase *iSelf, unsigned char value) { return [iSelf setRawObject:@(value) forKey:key]; });
+		return imp_implementationWithBlock(^(MFDynamicBase *iSelf, unsigned char value) { return [iSelf setRawObject:@(value) forKey:key propertyName:name]; });
 	
 	if ([self isProperty:property ofType:@encode(unsigned int)])
-		return imp_implementationWithBlock(^(MFDynamicBase *iSelf, unsigned int value) { return [iSelf setRawObject:@(value) forKey:key]; });
+		return imp_implementationWithBlock(^(MFDynamicBase *iSelf, unsigned int value) { return [iSelf setRawObject:@(value) forKey:key propertyName:name]; });
 	
 	if ([self isProperty:property ofType:@encode(unsigned short)])
-		return imp_implementationWithBlock(^(MFDynamicBase *iSelf, unsigned short value) { return [iSelf setRawObject:@(value) forKey:key]; });
+		return imp_implementationWithBlock(^(MFDynamicBase *iSelf, unsigned short value) { return [iSelf setRawObject:@(value) forKey:key propertyName:name]; });
 	
 	if ([self isProperty:property ofType:@encode(unsigned long)])
-		return imp_implementationWithBlock(^(MFDynamicBase *iSelf, unsigned long value) { return [iSelf setRawObject:@(value) forKey:key]; });
+		return imp_implementationWithBlock(^(MFDynamicBase *iSelf, unsigned long value) { return [iSelf setRawObject:@(value) forKey:key propertyName:name]; });
 	
 	if ([self isProperty:property ofType:@encode(unsigned long long)])
-		return imp_implementationWithBlock(^(MFDynamicBase *iSelf, unsigned long long value) { return [iSelf setRawObject:@(value) forKey:key]; });
+		return imp_implementationWithBlock(^(MFDynamicBase *iSelf, unsigned long long value) { return [iSelf setRawObject:@(value) forKey:key propertyName:name]; });
 	
 	if ([self isProperty:property ofType:@encode(float)])
-		return imp_implementationWithBlock(^(MFDynamicBase *iSelf, float value) { return [iSelf setRawObject:@(value) forKey:key]; });
+		return imp_implementationWithBlock(^(MFDynamicBase *iSelf, float value) { return [iSelf setRawObject:@(value) forKey:key propertyName:name]; });
 	
 	if ([self isProperty:property ofType:@encode(double)])
-		return imp_implementationWithBlock(^(MFDynamicBase *iSelf, double value) { return [iSelf setRawObject:@(value) forKey:key]; });
+		return imp_implementationWithBlock(^(MFDynamicBase *iSelf, double value){ return [iSelf setRawObject:@(value) forKey:key propertyName:name]; });
 	
 	if ([self isProperty:property ofType:@encode(BOOL)])
-		return imp_implementationWithBlock(^(MFDynamicBase *iSelf, BOOL value) { return [iSelf setRawObject:@(value) forKey:key]; });
+		return imp_implementationWithBlock(^(MFDynamicBase *iSelf, BOOL value) { return [iSelf setRawObject:@(value) forKey:key propertyName:name]; });
 	
 	if ([self isObject:property])
+		return imp_implementationWithBlock(^(MFDynamicBase *iSelf, id value)
 	{
-		if ([self isKindOfPropertyArchivableAsIs:property] || [self isProperty:property ofType:@encode(id)])
-		{
-			return imp_implementationWithBlock(^(MFDynamicBase *iSelf, id value) { [iSelf setRawObject:value forKey:key]; });
-		}
-		else if ([self isProperty:property ofKind:[NSURL class]])
-		{
-			return imp_implementationWithBlock(^(MFDynamicBase *iSelf, NSURL *url)
-			{
-				[iSelf setRawObject:[MFHumanReadableConverter convertToHumanReadable:url] forKey:key];
-			});
-		}
-#if TARGET_OS_IPHONE
-		else if ([self isProperty:property ofKind:[UIColor class]])
-		{
-			return imp_implementationWithBlock(^(MFDynamicBase *iSelf, UIColor *color)
-			{
-				[iSelf setRawObject:[MFHumanReadableConverter convertToHumanReadable:color] forKey:key];
-			});
-		}
-#endif
-		else if ([self propertyObjectTypeImplementsNSCoding:property])
-		{
-			return imp_implementationWithBlock(^(MFDynamicBase *iSelf, id value)
-		    {
-				NSData *data = [NSKeyedArchiver archivedDataWithRootObject:value];
-				[iSelf setRawObject:data forKey:key];
-			});
-		}
-	}
+		BOOL handled;
+		[iSelf processAndSetRawObject:value forKey:key property:property handled:&handled];
+		
+		if (!handled) @throw [[self class] unsupportedTypeExceptionForProperty:property];
+	});
 	
 	@throw [self unsupportedTypeExceptionForProperty:property];
+}
+
+- (void)processAndSetRawObject:(id)object forKey:(NSString *)key property:(RTProperty *)property handled:(BOOL *)handled
+{
+	if (handled) *handled = YES;
+	
+	NSString *propertyName = [property name];
+	
+	if ([[self class] isKindOfPropertyArchivableAsIs:property] || [[self class] isProperty:property ofType:@encode(id)])
+	{
+		[self setRawObject:object forKey:key propertyName:propertyName];
+		return;
+	}
+	else if ([[self class] isProperty:property ofKind:[NSURL class]] ||
+#if TARGET_OS_IPHONE
+			 [[self class] isProperty:property ofKind:[UIColor class]]
+#else
+			 [[self class] isProperty:property ofKind:[NSColor class]]
+#endif
+			 )
+	{
+		[self setRawObject:[MFHumanReadableConverter convertToHumanReadable:object] forKey:key propertyName:propertyName];
+		return;
+	}
+	else if ([[self class] propertyObjectTypeImplementsNSCoding:property])
+	{
+		NSData *data = [NSKeyedArchiver archivedDataWithRootObject:object];
+		[self setRawObject:data forKey:key propertyName:propertyName];
+		return;
+	}
+	
+	if (handled) *handled = NO;
 }
 
 + (BOOL)isProperty:(RTProperty *)property ofType:(const char *)type
@@ -310,7 +328,7 @@ static NSRegularExpression *_typeEncodingClassExtractionRegex;
 	// Load values using the setRawObject:forKey: template method
 	// (we know nothing of the backing store at that abstraction level)
 	for (NSString *key in [values allKeys])
-		[self setRawObject:values[key] forKey:key];
+		[self setRawObject:values[key] forKey:key propertyName:nil];
 	
 	if (emitWarnings) [self checkForMissingValuesAndEmitWarnings];
 }
@@ -332,6 +350,24 @@ static NSRegularExpression *_typeEncodingClassExtractionRegex;
 	}
 }
 
+#pragma mark Key-Value Coding
+
+- (id)valueForKey:(NSString *)key
+{
+	RTProperty *property = [[self class] rt_propertyForName:key];
+	return [self getAndProcessRawObjectForKey:key property:property handled:NULL];
+}
+
+- (void)setValue:(id)value forKey:(NSString *)key
+{
+	RTProperty *property = [[self class] rt_propertyForName:key];
+	
+	BOOL handled;
+	[self processAndSetRawObject:value forKey:key property:property handled:&handled];
+	
+	if (!handled) [self setRawObject:value forKey:key propertyName:[property name]];
+}
+
 #pragma mark Template Methods
 
 - (id)rawObjectForKey:(NSString *)key
@@ -339,7 +375,7 @@ static NSRegularExpression *_typeEncodingClassExtractionRegex;
 	@throw [NSException exceptionWithName:@"MFDynamic Exception" reason:@"No backing store; this is an abstract class" userInfo:nil];
 }
 
-- (void)setRawObject:(id)object forKey:(NSString *)key
+- (void)setRawObject:(id)object forKey:(NSString *)key propertyName:(NSString *)propertyName
 {
 	@throw [NSException exceptionWithName:@"MFDynamic Exception" reason:@"No backing store; this is an abstract class" userInfo:nil];
 }

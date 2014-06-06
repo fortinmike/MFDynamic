@@ -69,8 +69,9 @@
  *
  *  @param object The raw object to store in the backing store.
  *  @param key The key with which to store the object (according to the *Key Specification*, as provided when MFDynamicDefault calls this method).
+ *  @param propertyName The name of the property that will change. Useful to trigger change notifications for bindings support.
  */
-- (void)setRawObject:(id)object forKey:(NSString *)key;
+- (void)setRawObject:(id)object forKey:(NSString *)key propertyName:(NSString *)propertyName;
 
 /**
  *  By default, emits warnings for all properties (if warning emission is enabled).

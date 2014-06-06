@@ -58,9 +58,11 @@
 	return [_userDefaults objectForKey:key];
 }
 
-- (void)setRawObject:(id)object forKey:(NSString *)key
+- (void)setRawObject:(id)object forKey:(NSString *)key propertyName:(NSString *)propertyName
 {
+	[self willChangeValueForKey:propertyName];
 	object ? [_userDefaults setObject:object forKey:key] : [_userDefaults removeObjectForKey:key];
+	[self didChangeValueForKey:propertyName];
 }
 
 - (BOOL)shouldEmitMissingValueWarningForProperty:(NSString *)propertyName
