@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "MFDynamic"
-  s.version          = "1.1.0"
+  s.version          = "1.1.1"
   s.summary          = "MFDynamic eliminates stringly-typed User Defaults, NSCoding boilerplate and more."
   s.homepage         = "http://github.com/fortinmike/MFDynamic"
   s.license          = 'MIT'
