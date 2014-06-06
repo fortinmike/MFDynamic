@@ -44,7 +44,7 @@
 	return [_values objectForKey:key];
 }
 
-- (void)setRawObject:(id)object forKey:(NSString *)key
+- (void)setRawObject:(id)object forKey:(NSString *)key propertyName:(NSString *)propertyName
 {
 	object ? [_values setObject:object forKey:key] : [_values removeObjectForKey:key];
 }
