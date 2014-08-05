@@ -17,6 +17,9 @@
 	if ([object isKindOfClass:[NSURL class]])
 		return [self stringRepresentationWithURL:object];
 	
+	if ([object isKindOfClass:[NSUUID class]])
+		return [self stringRepresentationWithUUID:object];
+	
 #if TARGET_OS_IPHONE
 	if ([object isKindOfClass:[UIColor class]])
 		return [self stringRepresentationWithUIColor:object];
@@ -34,6 +37,9 @@
 	
 	if (targetType == [NSURL class])
 		return [self URLWithStringRepresentation:object];
+	
+	if (targetType == [NSUUID class])
+		return [self UUIDWithStringRepresentation:object];
 	
 #if TARGET_OS_IPHONE
 	if (targetType == [UIColor class])
@@ -59,6 +65,18 @@
 		return [NSURL fileURLWithPath:[stringRepresentation stringByReplacingOccurrencesOfString:@"file://" withString:@""]];
 	
 	return [NSURL URLWithString:stringRepresentation];
+}
+
+#pragma mark NSUUID Conversion
+
++ (NSString *)stringRepresentationWithUUID:(NSUUID *)uuid
+{
+	return [uuid UUIDString];
+}
+
++ (NSUUID *)UUIDWithStringRepresentation:(NSString *)stringRepresentation
+{
+	return [[NSUUID alloc] initWithUUIDString:[stringRepresentation uppercaseString]];
 }
 
 #pragma mark UIColor and NSColor Conversion

@@ -125,6 +125,7 @@ static NSRegularExpression *_typeEncodingClassExtractionRegex;
 		return [self rawObjectForKey:key];
 	}
 	else if ([[self class] isProperty:property ofKind:[NSURL class]] ||
+			 [[self class] isProperty:property ofKind:[NSUUID class]] ||
 #if TARGET_OS_IPHONE
 			 [[self class] isProperty:property ofKind:[UIColor class]]
 #else
@@ -214,6 +215,7 @@ static NSRegularExpression *_typeEncodingClassExtractionRegex;
 		return;
 	}
 	else if ([[self class] isProperty:property ofKind:[NSURL class]] ||
+			 [[self class] isProperty:property ofKind:[NSUUID class]] ||
 #if TARGET_OS_IPHONE
 			 [[self class] isProperty:property ofKind:[UIColor class]]
 #else
