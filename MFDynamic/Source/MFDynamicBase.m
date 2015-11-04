@@ -10,9 +10,9 @@
 //
 
 #import <objc/message.h>
-#import <MARTNSObject.h>
-#import <RTMethod.h>
-#import <RTProperty.h>
+#import "MARTNSObject.h"
+#import "RTMethod.h"
+#import "RTProperty.h"
 #import "MFDynamicBase.h"
 #import "MFHumanReadableConverter.h"
 
