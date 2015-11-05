@@ -1,15 +1,14 @@
 inhibit_all_warnings!
 
-ios_version = '6.1'
+ios_version = '8.4'
 osx_version = '10.7'
 
 def library_pods
 	podspec :path => '../MFDynamic.podspec'
-	pod 'MAObjCRuntime', '~> 0.0.1'
 end
 
 def test_pods
-  pod 'Kiwi/XCTest', '~> 2.2.4'
+  pod 'Kiwi', '~> 2.4'
 end
 
 # Library / Framework Targets
@@ -28,6 +27,7 @@ end
 
 target "MFDynamic.iOS.Tests" do
 	platform :ios, ios_version
+  library_pods
 	test_pods
 end
 
