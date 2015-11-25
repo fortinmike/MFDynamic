@@ -10,9 +10,9 @@
 //
 
 #import <objc/message.h>
-#import <MARTNSObject.h>
-#import <RTMethod.h>
-#import <RTProperty.h>
+#import <MAObjCRuntime/MARTNSObject.h>
+#import <MAObjCRuntime/RTMethod.h>
+#import <MAObjCRuntime/RTProperty.h>
 #import "MFDynamicBase.h"
 #import "MFHumanReadableConverter.h"
 
